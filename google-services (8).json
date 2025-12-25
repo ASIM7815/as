@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "104517837705",
+    "firebase_url": "https://video-calling-2097e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "video-calling-2097e",
+    "storage_bucket": "video-calling-2097e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104517837705:android:725903c041e73b2743f758",
+        "android_client_info": {
+          "package_name": "asim.bas.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104517837705-tsgs4at9fqm2h30jghh78209tanh28jk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArRM8Uhm6ec-lPL97qFQCUAHFhcqmtEBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104517837705-tsgs4at9fqm2h30jghh78209tanh28jk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104517837705:android:53ca77840bd8d1de43f758",
+        "android_client_info": {
+          "package_name": "com.asm.communication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104517837705-tsgs4at9fqm2h30jghh78209tanh28jk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArRM8Uhm6ec-lPL97qFQCUAHFhcqmtEBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104517837705-tsgs4at9fqm2h30jghh78209tanh28jk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104517837705:android:f3bf041121a48ddd43f758",
+        "android_client_info": {
+          "package_name": "www.asimsaadz.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104517837705-tsgs4at9fqm2h30jghh78209tanh28jk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArRM8Uhm6ec-lPL97qFQCUAHFhcqmtEBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104517837705-tsgs4at9fqm2h30jghh78209tanh28jk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:104517837705:android:b6bb66db4775cdef43f758",
+        "android_client_info": {
+          "package_name": "www.meez.asimsaadz.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "104517837705-tsgs4at9fqm2h30jghh78209tanh28jk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArRM8Uhm6ec-lPL97qFQCUAHFhcqmtEBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "104517837705-tsgs4at9fqm2h30jghh78209tanh28jk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

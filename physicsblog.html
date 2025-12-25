@@ -105,3 +105,18 @@
 
 </body>
 </html>
+<script src="auth.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        protectPage();
+        const user = getCurrentUser();
+        if (user) {
+            const logoutBtn = document.createElement('button');
+            logoutBtn.className = 'logout-btn';
+            logoutBtn.textContent = 'Logout';
+            logoutBtn.onclick = logout;
+            logoutBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px 20px; background: #ff4444; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;';
+            document.body.appendChild(logoutBtn);
+        }
+    });
+</script>

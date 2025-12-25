@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ASIMSAADZ</title>
+    <link rel="icon" href="ASIM.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .login-container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .login-container h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .login-container p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        #g_id_onload {
+            margin-top: 20px;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>ASIMSAADZ</h1>
+        <p>Sign in with your Google account</p>
+        
+        <div id="g_id_onload"
+             data-client_id="104517837705-tsgs4at9fqm2h30jghh78209tanh28jk.apps.googleusercontent.com"
+             data-callback="handleCredentialResponse"
+             data-auto_select="true"
+             data-itp_support="true">
+        </div>
+        
+        <div id="g_id_signin" data-type="standard" data-size="large" data-theme="outline"></div>
+        
+        <div id="loading" style="display:none;">
+            <div class="spinner"></div>
+            <p>Authenticating...</p>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
