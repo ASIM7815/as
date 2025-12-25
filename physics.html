@@ -1,95 +1,610 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971838176892851"
-     crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="icon" type="image/png" href="ASIM.ico">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971838176892851"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="ASIM.ico">
+    <link rel="shortcut icon" href="ASIM.ico" type="image/x-icon">
+    <title>Engineering Physics - ASIMSAAD1</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link rel="icon" href="ASIM.ico" type="image/x-icon">
-<link rel="shortcut icon" href="ASIM.ico" type="image/x-icon">
-  <title>ENGINEERING PHYSICS</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
+        :root {
+            --primary-color: #a855f7;
+            --primary-glow: rgba(168, 85, 247, 0.4);
+            --dark-bg: linear-gradient(135deg, #1f0f2e 0%, #3d1f5f 50%, #241739 100%);
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #1f0f2e 0%, #3d1f5f 50%, #241739 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            padding: 1rem 1.5rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            border-radius: 50px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-btn:hover {
+            background: rgba(168, 85, 247, 0.1);
+            border-color: var(--primary-color);
+            transform: translateX(-5px);
+            box-shadow: 0 0 30px var(--primary-glow);
+        }
+
+        .title-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .page-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
+            text-shadow: 0 0 80px var(--primary-glow);
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 1rem;
+        }
+
+        .icon-display {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(168, 85, 247, 0.1);
+            border-radius: 30px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .section-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 60px var(--primary-glow);
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(168, 85, 247, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2.5rem;
+        }
+
+        .links-container {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .resource-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 1.5rem;
+            background: rgba(168, 85, 247, 0.05);
+            border: 1px solid rgba(168, 85, 247, 0.15);
+            border-radius: 15px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .resource-link:hover::before {
+            left: 100%;
+        }
+
+        .resource-link:hover {
+            background: rgba(168, 85, 247, 0.15);
+            border-color: var(--primary-color);
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px var(--primary-glow);
+        }
+
+        .link-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+
+        .link-text {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .link-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-link:hover .link-arrow {
+            transform: translateX(5px);
+        }
+
+        /* Grid Layout for Resources */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Floating Elements */
+        .floating-shape {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            right: -100px;
+            animation: floatShape 20s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            bottom: 10%;
+            left: -50px;
+            animation: floatShape 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatShape {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(50px, -50px) rotate(90deg); }
+            50% { transform: translate(0, -100px) rotate(180deg); }
+            75% { transform: translate(-50px, -50px) rotate(270deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .back-btn {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.8rem 1.2rem;
+            }
+
+            .header {
+                margin-bottom: 2rem;
+                padding: 2rem 0;
+            }
+
+            .section-card {
+                padding: 1.5rem;
+            }
+
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1f0f2e 0%, #3d1f5f 50%, #241739 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(168, 85, 247, 0.1);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <div class="container mx-auto max-w-4xl px-4 py-8 sm:py-12">
-    <header class="text-center mb-10">
-      <h1 class="text-4xl sm:text-5xl font-bold text-blue-600">ENGINEERING PHYSICS</h1>
-      <p class="mt-3 text-lg text-gray-600">Your central place for notes, problems, and articles.</p>
-    </header>
-
-    <!-- Section: ENGINEERING PHYSICS Blog -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-      <div class="p-5 text-xl font-semibold text-gray-800 border-b">ENGINEERING PHYSICS Blogs</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="https://altafphysicsforallislec.blogspot.com/">THEORY AND LAB (ASSISTENT PROFESSOR)
-          </a></li>
-        </ul>
-      </div>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
     </div>
 
-    <!-- Section: ENGINEERING PHYSICS PYQs -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-      <div class="p-5 text-xl font-semibold text-gray-800 border-b">ENGINEERING PHYSICS PYQs</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="https://drive.google.com/drive/folders/18z1QgbGuB5qszzuqyyoG_2vhs6WWwKIK">ENGINEERING PHYSICS (OU)</a></li>
-          
-        </ul>
-      </div>
+    <div id="particles-js"></div>
+    
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+
+    <a href="notes.html" class="back-btn">← Back to Notes</a>
+
+    <div class="container">
+        <header class="header">
+            <div class="icon-display">
+                <svg width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="32" r="5" fill="#a855f7"/>
+                    <ellipse cx="32" cy="32" rx="26" ry="12" stroke="#a855f7" stroke-width="2.5" fill="none" transform="rotate(0 32 32)"/>
+                    <ellipse cx="32" cy="32" rx="26" ry="12" stroke="#a855f7" stroke-width="2.5" fill="none" transform="rotate(60 32 32)"/>
+                    <ellipse cx="32" cy="32" rx="26" ry="12" stroke="#a855f7" stroke-width="2.5" fill="none" transform="rotate(120 32 32)"/>
+                    <circle cx="32" cy="6" r="3" fill="#a855f7"/>
+                    <circle cx="54" cy="22" r="3" fill="#a855f7"/>
+                    <circle cx="54" cy="42" r="3" fill="#a855f7"/>
+                    <circle cx="32" cy="58" r="3" fill="#a855f7"/>
+                    <circle cx="10" cy="42" r="3" fill="#a855f7"/>
+                    <circle cx="10" cy="22" r="3" fill="#a855f7"/>
+                </svg>
+            </div>
+            <div class="title-wrapper">
+                <h1 class="page-title">Engineering Physics</h1>
+            </div>
+            <p class="page-subtitle">Explore quantum mechanics, waves, and fundamental physics principles</p>
+        </header>
+
+        <!-- Blogs Section -->
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 2V8H20" stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="8" y1="13" x2="16" y2="13" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="8" y1="17" x2="16" y2="17" stroke="#a855f7" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                Engineering Physics Blogs
+            </h2>
+            <div class="links-container">
+                <a href="https://altafphysicsforallislec.blogspot.com/" class="resource-link" target="_blank">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                    <span class="link-text">THEORY AND LAB</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- PYQs Section -->
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="3" width="16" height="18" rx="2" stroke="#a855f7" stroke-width="2"/>
+                        <line x1="8" y1="8" x2="16" y2="8" stroke="#a855f7" stroke-width="1.5"/>
+                        <line x1="8" y1="12" x2="16" y2="12" stroke="#a855f7" stroke-width="1.5"/>
+                        <line x1="8" y1="16" x2="13" y2="16" stroke="#a855f7" stroke-width="1.5"/>
+                    </svg>
+                </span>
+                Previous Year Questions
+            </h2>
+            <div class="links-container">
+                <a href="https://drive.google.com/drive/folders/18z1QgbGuB5qszzuqyyoG_2vhs6WWwKIK" class="resource-link" target="_blank">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></span>
+                    <span class="link-text">Engineering Physics PYQs (OU)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Personal Resources Section -->
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="starGradPhysics" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#a855f7;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#c084fc;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="url(#starGradPhysics)" stroke="#a855f7" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                Personal Physics Resources
+            </h2>
+            <div class="links-container grid-layout">
+                <a href="Physics complete notes.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                    <span class="link-text">Physics Complete Notes</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="PHYSICS LAB.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M9 3v18M12 3v18"/><path d="M9 9h3M9 15h3"/><circle cx="10.5" cy="19" r="2"/></svg></span>
+                    <span class="link-text">Physics Lab Manual</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="PHYSICS UNIT WISE IMPORTANT QUESTIONS.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+                    <span class="link-text">Unit Wise Important Questions</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="Physics External Imp Unit -1.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                    <span class="link-text">Physics External Imp Unit -1</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="Physics External Imp Unit -2.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                    <span class="link-text">Physics External Imp Unit -2</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="Physics External Imp Unit -3.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                    <span class="link-text">Physics External Imp Unit -3</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="Physics External Imp Unit -4.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                    <span class="link-text">Physics External Imp Unit -4</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="Physics External Imp Unit -5.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                    <span class="link-text">Physics External Imp Unit -5</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- YouTube Section -->
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="5" width="20" height="14" rx="3" stroke="#a855f7" stroke-width="2"/>
+                        <path d="M10 9L15 12L10 15V9Z" fill="#a855f7" stroke="#a855f7" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                Physics YouTube Channels
+            </h2>
+            <div class="links-container">
+                <a href="https://youtu.be/0_h-kLDrGlM?si=Q0GIe3pQUhoR82o7" class="resource-link" target="_blank">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="#a855f7" stroke="#a855f7" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg></span>
+                    <span class="link-text">Love to Learn YouTube Channel</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
     </div>
 
- <!-- Section: ENGINEERING PHYSICS PYQs -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-      <div class="p-5 text-xl font-semibold text-gray-800 border-b">MY PERSONAL ENGINEERING PHYSICS RESOURSCES</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="Physics complete notes.pdf">ENGINEERING PHYSICS  COMPLETE NOTES (OU)</a></li>
-             <li><a href="PHYSICS LAB.pdf">ENGINEERING PHYSICS LAB MANUAL (OU)</a></li>
-                <li><a href="PHYSICS UNIT WISE IMPORTANT QUESTIONS.pdf">ENGINEERING PHYSICS UNIT WISE IMPORTANT QUESTIONS (OU)</a></li>
-                   <li><a href="Physics External Imp Unit -1.pdf">ENGINEERING PHYSICS EXTERNAL IMPORTANT UNIT -1 (OU)</a></li>
-                      <li><a href="Physics External Imp Unit -2.pdf">ENGINEERING PHYSICS EXTERNAL IMPORTANT UNIT -2 (OU)</a></li>
-                         <li><a href="Physics External Imp Unit -3.pdf">ENGINEERING PHYSICS EXTERNAL IMPORTANT UNIT -3 (OU)</a></li>
-            <li><a href="Physics External Imp Unit -4.pdf">ENGINEERING PHYSICS EXTERNAL IMPORTANT UNIT -4 (OU)</a></li>
-              <li><a href="Physics External Imp Unit -5.pdf">ENGINEERING PHYSICS EXTERNAL IMPORTANT UNIT -5 (OU)</a></li>
-        </ul>
-      </div>
-    </div>
+    <script>
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: ['#a855f7', '#c084fc', '#d8b4fe'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.4, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#a855f7',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'grab' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 140, line_linked: { opacity: 0.5 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
 
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
 
-    <!-- Section: Unit Wise Notes -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-      <div class="p-5 text-xl font-semibold text-gray-800 border-b">ENGINEERING PHYSICS LAB YOUTUBE CHANNEL'S</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="https://youtu.be/0_h-kLDrGlM?si=Q0GIe3pQUhoR82o7">Love to Learn YOUTUBE CHANNEL (SIMPLE ENGLISH) </a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
+        // Hide loading screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 800);
+        });
+
+        // Animate header
+        gsap.from('.icon-display', {
+            duration: 1,
+            y: -50,
+            opacity: 0,
+            ease: 'bounce.out'
+        });
+
+        gsap.from('.page-title', {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            delay: 0.3,
+            ease: 'power3.out'
+        });
+
+        gsap.from('.page-subtitle', {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            delay: 0.5,
+            ease: 'power3.out'
+        });
+
+        // Animate section cards
+        gsap.utils.toArray('.section-card').forEach((card, index) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                },
+                duration: 0.8,
+                y: 50,
+                opacity: 0,
+                rotationX: -15,
+                delay: index * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Animate links
+        gsap.utils.toArray('.resource-link').forEach((link, index) => {
+            gsap.from(link, {
+                scrollTrigger: {
+                    trigger: link,
+                    start: 'top 90%',
+                    toggleActions: 'play none none reverse'
+                },
+                duration: 0.6,
+                x: -30,
+                opacity: 0,
+                delay: (index % 9) * 0.05,
+                ease: 'power2.out'
+            });
+        });
+    </script>
 </body>
 </html>
-<script src="auth.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        protectPage();
-        const user = getCurrentUser();
-        if (user) {
-            const logoutBtn = document.createElement('button');
-            logoutBtn.className = 'logout-btn';
-            logoutBtn.textContent = 'Logout';
-            logoutBtn.onclick = logout;
-            logoutBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px 20px; background: #ff4444; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;';
-            document.body.appendChild(logoutBtn);
-        }
-    });
-</script>
 

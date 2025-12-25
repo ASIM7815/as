@@ -3,372 +3,1396 @@
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971838176892851"
      crossorigin="anonymous"></script>
-       <link rel="icon" type="image/png" href="ASIM.ico">
-
-<link rel="icon" href="ASIM.ico" type="image/x-icon">
-<link rel="shortcut icon" href="ASIM.ico" type="image/x-icon">
-       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971838176892851"
-     crossorigin="anonymous"></script>
-  
+    <link rel="icon" type="image/png" href="ASIM.ico">
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Add this inside the <head> tag of your HTML -->
-    <link rel="icon" type="image/png" href="ASIM.ico">
-
-<link rel="icon" href="ASIM.ico" type="image/x-icon">
-<link rel="shortcut icon" href="ASIM.ico" type="image/x-icon">
-
-
-    <title>ASIMSAADZ</title> 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Three.js CDN for the 3D animation -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- Google Fonts for Serif heading and Sans-serif body -->
+    <title>ASIMSAADZ - Your Engineering Hub 🚀</title>
+    
+    <!-- Modern Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Animation Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <!-- Particles.js for animated background -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    
+    <!-- GSAP for smooth animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            --neon-pink: #ff006e;
+            --neon-blue: #00f5ff;
+            --neon-purple: #8b5cf6;
+            --neon-green: #00ff88;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
+            font-family: 'Space Grotesk', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+            line-height: 1.6;
         }
-        .playfair-display {
-            font-family: 'Playfair Display', serif;
+
+        /* Animated Background */
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
         }
-        /* Style for the canvas to cover the entire background */
-        #bg-canvas {
+
+        .gradient-overlay {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(138, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 10%, rgba(0, 245, 255, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Modern Glassmorphism Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 10, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 0;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid var(--neon-purple);
+            box-shadow: 0 0 20px rgba(138, 92, 246, 0.5);
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+        }
+
+        nav a:hover {
+            color: var(--neon-pink);
+            background: rgba(255, 0, 110, 0.1);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 80%;
+            height: 2px;
+            background: var(--accent-gradient);
+            transition: transform 0.3s ease;
+        }
+
+        nav a:hover::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: linear-gradient(135deg, rgba(255, 0, 110, 0.15), rgba(131, 56, 236, 0.15));
+            backdrop-filter: blur(15px) saturate(180%);
+            border: 2px solid transparent;
+            background-image: 
+                linear-gradient(135deg, rgba(13, 13, 13, 0.9), rgba(25, 13, 28, 0.9)),
+                linear-gradient(135deg, #ff006e, #8338ec, #06ffa5);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            color: #ffffff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem 0.7rem;
+            border-radius: 12px;
+            box-shadow: 
+                0 0 20px rgba(255, 0, 110, 0.4),
+                0 0 40px rgba(131, 56, 236, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-menu-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 0, 110, 0.3), transparent);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .mobile-menu-btn:hover::before {
+            width: 200px;
+            height: 200px;
+        }
+
+        .mobile-menu-btn:hover {
+            background-image: 
+                linear-gradient(135deg, rgba(255, 0, 110, 0.2), rgba(131, 56, 236, 0.2)),
+                linear-gradient(135deg, #06ffa5, #ff006e, #8338ec);
+            color: #06ffa5;
+            box-shadow: 
+                0 0 30px rgba(255, 0, 110, 0.6),
+                0 0 60px rgba(131, 56, 236, 0.5),
+                0 5px 20px rgba(6, 255, 165, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .mobile-menu-btn:active {
+            transform: translateY(0) scale(0.98);
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(13, 13, 13, 0.98), rgba(25, 13, 28, 0.98));
+            backdrop-filter: blur(30px);
+            border: none;
+            transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            padding: 2rem 1.5rem;
+            z-index: 2000;
+            box-shadow: 0 0 50px rgba(255, 0, 110, 0.3);
+        }
+
+        .mobile-nav.active {
+            right: 0;
+        }
+
+        .mobile-nav nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 5rem;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .mobile-nav nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.2rem;
+            border-radius: 15px;
+            width: 100%;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-nav nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 0, 110, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .mobile-nav nav a:hover::before {
+            left: 100%;
+        }
+
+        .mobile-nav nav a:hover {
+            color: #ff006e;
+            background: rgba(255, 0, 110, 0.15);
+            border-color: #ff006e;
+            transform: translateX(-5px);
+            box-shadow: 0 5px 20px rgba(255, 0, 110, 0.4);
+        }
+
+        .mobile-nav nav a svg {
+            flex-shrink: 0;
+            filter: drop-shadow(0 0 5px rgba(255, 0, 110, 0.6));
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: linear-gradient(135deg, #ff006e, #8338ec);
+            border: 2px solid #ff006e;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
+            font-weight: 300;
+            z-index: 1;
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg) scale(1.1);
+            box-shadow: 0 0 30px rgba(255, 0, 110, 0.8);
+            background: linear-gradient(135deg, #8338ec, #ff006e);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 7rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, var(--neon-blue) 50%, var(--neon-pink) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .hero .description {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            color: #888;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+            color: white;
+            box-shadow: 0 10px 40px rgba(138, 92, 246, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(138, 92, 246, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 245, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 245, 255, 0.5);
+        }
+
+        /* Floating Elements */
+        .floating-element {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-30px) rotate(10deg);
+            }
+        }
+
+        .emoji-1 {
+            top: 20%;
+            left: 10%;
+            font-size: 3rem;
+            animation-delay: 0s;
+        }
+
+        .emoji-2 {
+            top: 60%;
+            right: 15%;
+            font-size: 2.5rem;
+            animation-delay: 1s;
+        }
+
+        .emoji-3 {
+            bottom: 20%;
+            left: 20%;
+            font-size: 2rem;
+            animation-delay: 2s;
+        }
+
+        .emoji-4 {
+            top: 15%;
+            right: 10%;
+            font-size: 2.5rem;
+            animation-delay: 1.5s;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, white, var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 3rem 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-purple);
+            box-shadow: 0 20px 60px rgba(138, 92, 246, 0.3);
+        }
+
+        .feature-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .feature-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--neon-blue);
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .feature-card .btn-link {
+            margin-top: 1.5rem;
+            display: inline-block;
+            color: var(--neon-pink);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card .btn-link:hover {
+            color: var(--neon-blue);
+            transform: translateX(5px);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 6rem 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            margin: 4rem 0;
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: #888;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(10, 10, 10, 0.9);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--neon-blue);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-link:hover {
+            background: var(--neon-purple);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(138, 92, 246, 0.4);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 10px 30px rgba(138, 92, 246, 0.4);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(138, 92, 246, 0.6);
+        }
+
+        .scroll-top.show {
+            display: flex;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .floating-element {
+                display: none;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-gradient);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-gradient);
+        }
+
+        /* Loading Animation */
+        .loader {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-        }
-        /* Overlay to ensure text readability over the animation */
-        .content-overlay {
-            position: relative;
-            z-index: 1;
-            background-color: rgba(17, 24, 39, 0.75); /* Dark semi-transparent overlay */
-        }
-        /* Mobile menu styles */
-        .mobile-menu {
-            transition: transform 0.3s ease-in-out;
-            transform: translateX(100%);
-        }
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-        /* Logout button styles */
-        .logout-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-            padding: 10px 20px;
-            background: #ff4444;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 14px;
-        }
-        .logout-btn:hover {
-            background: #cc0000;
-        }
-        .user-info {
-            position: fixed;
-            top: 20px;
-            right: 220px;
-            z-index: 999;
-            color: white;
-            font-size: 14px;
+            background: #0a0a0a;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
         }
-        .user-avatar {
-            width: 40px;
-            height: 40px;
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--neon-purple);
             border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
     </style>
-</head>
+
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ6SRVCM82"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BJ6SRVCM82"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-BJ6SRVCM82');
+    </script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p style="color: var(--neon-blue); font-weight: 600;">Loading Amazing Experience...</p>
+        </div>
+    </div>
 
-  gtag('config', 'G-BJ6SRVCM82');
-</script>
-<body class="text-white">
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+    <div class="gradient-overlay"></div>
 
-    <!-- The Canvas for the 3D animation -->
-    <canvas id="bg-canvas"></canvas>
-
-    <!-- Content Sections on top of the canvas -->
-    <div class="content-overlay">
-
-        <!-- Header Section - Dark Background -->
-        <header class="bg-transparent text-white sticky top-0 z-50">
-            <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-              <!-- Brand Logo/Name -->
-<a href="#" class="flex items-center space-x-2">
-    <!-- Replace SVG with your logo image -->
-       <img src="ASIM.png" alt="OU Notes Hub Logo" class="h-24 w-auto object-contain" />
-    <span class="text-xl font-bold playfair-display">MOHD ASIM SAAD</span>
-</a>
-
-                <!-- Mobile Menu Button (Hamburger) -->
-                <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-                <!-- Desktop Navigation Links -->
-                 <nav class="hidden md:flex space-x-6 text-gray-300">
-                    <a href="notes.html" class="hover:text-white transition duration-300">CSE & CIVIL Notes</a>
-                    <a href="physicsblog.html" class="hover:text-white transition duration-300">Physics Blog</a>
-                    <a href="beeblog.html" class="hover:text-white transition duration-300">BEE BLOG</a>
-                     <a href="pro.html" class="hover:text-white transition duration-300">PROTOTYPES</a>
-
-                    <!-- Changed "Founder" to "About Us" for clarity -->
-                    <a href="aboutus.html" class="hover:text-white transition duration-300">About Us</a>
-                    <a href="#footer" class="hover:text-white transition duration-300">Contact</a>
-                </nav>
-            </div>
-
-            <!-- Mobile Menu (Hidden by default) -->
-            <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-2/3 bg-gray-800 shadow-xl p-8 z-50 md:hidden">
-                <div class="flex justify-end mb-8">
-                    <button id="close-menu-button" class="text-white">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    <!-- Content -->
+    <div class="content">
+        <!-- Header -->
+        <header>
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <span>ASIMSAAD1</span>
+                </a>
+                
+                <nav>
+                    <a href="notes.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
                         </svg>
-                    </button>
-                </div>
-<nav class="flex flex-col items-start space-y-2 p-4 bg-gray-800 text-gray-300 sm:flex-row sm:space-y-0 sm:space-x-6">
-    <a href="notes.html" class="hover:text-white transition duration-300">CSE & CIVIL Notes</a>
-    <a href="physicsblog.html" class="hover:text-white transition duration-300">Physics Blog</a>
-    <a href="beeblog.html" class="hover:text-white transition duration-300">BEE BLOG</a>  
-     <a href="pro.html" class="hover:text-white transition duration-300">PROTOTYPES</a>
+                        Notes
+                    </a>
+                    <a href="physicsblog.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v6m0 6v6"></path>
+                            <path d="M17 7l-5 5"></path>
+                            <path d="M7 7l5 5"></path>
+                            <path d="M7 17l5-5"></path>
+                            <path d="M17 17l-5-5"></path>
+                        </svg>
+                        Physics Blog
+                    </a>
+                    <a href="beeblog.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                        </svg>
+                        BEE Blog
+                    </a>
+                    <a href="pro.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                        Prototypes
+                    </a>
+                    <a href="aboutus.html">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        About
+                    </a>
+                    <a href="#footer">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 6px;">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        Contact
+                    </a>
+                </nav>
 
-
-    <a href="aboutus.html" class="hover:text-white transition duration-300">About Us</a>
-    <a href="#footer" class="hover:text-white transition duration-300">Contact</a>
-</nav>
-
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    ☰
+                </button>
             </div>
         </header>
 
-       
-        <!-- NEW: Added Content Section to address "thin content" issue -->
-        <section class="container mx-auto px-4 py-16 text-center">
-            <div class="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 md:p-12">
-                <h2 class="text-3xl md:text-4xl font-bold playfair-display text-white mb-6">Your Hub for Engineering Studies</h2>
-                <p class="text-gray-300 max-w-4xl mx-auto text-lg leading-relaxed">
-This platform helps first-year Osmania University engineering students by providing study materials & including notes for core subjects (CS and Civil), a physics blog, and previous year's questions (PYQs). It also links to useful YouTube lectures.                </p>
+        <!-- Mobile Menu -->
+        <div class="mobile-nav" id="mobileNav">
+            <button class="close-btn" id="closeNav">×</button>
+            <nav>
+                <a href="notes.html">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                    </svg>
+                    Notes
+                </a>
+                <a href="physicsblog.html">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M12 1v6m0 6v6"></path>
+                        <path d="M17 7l-5 5"></path>
+                        <path d="M7 7l5 5"></path>
+                        <path d="M7 17l5-5"></path>
+                        <path d="M17 17l-5-5"></path>
+                    </svg>
+                    Physics Blog
+                </a>
+                <a href="beeblog.html">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                    </svg>
+                    BEE Blog
+                </a>
+                <a href="pro.html">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5"></path>
+                        <path d="M2 12l10 5 10-5"></path>
+                    </svg>
+                    Prototypes
+                </a>
+                <a href="aboutus.html">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    About
+                </a>
+                <a href="#footer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    Contact
+                </a>
+            </nav>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="floating-element emoji-1">🚀</div>
+            <div class="floating-element emoji-2">💡</div>
+            <div class="floating-element emoji-3">❤️</div>
+            <div class="floating-element emoji-4">📐</div>
+            
+            <div class="hero-content">
+                <h1 class="animate__animated animate__fadeInUp">
+                    Your Engineering
+                    <br>Success Hub
+                </h1>
+                <p class="subtitle">Level Up Your Academic Game 🎯</p>
+                <p class="description">
+                    Welcome to the ultimate resource hub for first-year Osmania University engineering students. 
+                    Get access to premium notes, video lectures, PYQs, and interactive learning materials - all in one place!
+                </p>
+                <div class="cta-buttons">
+                    <a href="notes.html" class="btn btn-primary">
+                        🔥 Explore Notes
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        ✨ Learn More
+                    </a>
+                </div>
             </div>
         </section>
 
-<!-- Combined CSE & Civil Notes Card -->
-<section id="notes-sections" class="container mx-auto px-4 py-16 md:py-24">
-  <a href="notes.html" class="block group">
-    <div class="flex flex-col md:flex-row items-center bg-gray-800 rounded-xl shadow-lg p-6 md:p-10 mb-12 transition-transform transform group-hover:scale-[1.01]">
-      <div class="md:w-1/2 md:pr-10 mb-6 md:mb-0">
-        <!-- Image -->
-        <div class="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center p-4 relative overflow-hidden">
-          <img src="pexels-kindelmedia-7054511.jpg" alt="CSE & Civil Notes" class="object-cover w-full h-full rounded-lg">
-         
-        </div>
-      </div>
-      <div class="md:w-1/2 flex flex-col justify-between h-full">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-bold playfair-display text-white mb-4">
-            B.E 1st Year Notes and PYQ's, Important YouTube Videos
-          </h2>
-          <p class="text-gray-300 mb-6">
-            Carefully crafted resources for both CSE & Civil Engineering students of Osmania University. Perfect for self-study, revisions, and exam prep.
-          </p>
-        </div>
-        <div class="flex justify-center md:justify-center mt-auto">
-          <span class="inline-block bg-indigo-500 text-white font-semibold py-2 px-6 rounded-full shadow group-hover:bg-indigo-600 transition duration-300">
-            View Notes
-          </span>
-        </div>
-      </div>
-    </div>
-  </a>
-</section>
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h2>500+</h2>
+                    <p>Study Materials</p>
+                </div>
+                <div class="stat-item">
+                    <h2>10K+</h2>
+                    <p>Happy Students</p>
+                </div>
+                <div class="stat-item">
+                    <h2>50+</h2>
+                    <p>Video Lectures</p>
+                </div>
+                <div class="stat-item">
+                    <h2>100%</h2>
+                    <p>Free Access</p>
+                </div>
+            </div>
+        </section>
 
-        <!-- NEWLY DESIGNED Footer Section -->
-        <footer id="footer" class="bg-gray-900 text-white">
-            <div class="container mx-auto px-4 pt-20 pb-10">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-                    <!-- Column 1: Brand & About -->
-                    <div class="md:col-span-2 lg:col-span-1">
-                        <h3 class="text-2xl font-bold playfair-display mb-4">ASIMSAADZ</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">
-                            Your dedicated resource for 1st-year engineering notes at Osmania University. We simplify learning to help you succeed.
-                        </p>
-                    </div>
-                    <!-- Column 2: Quick Links -->
-                    <div>
-                        <h4 class="font-bold text-lg mb-4 playfair-display">Quick Links</h4>
-                        <ul class="space-y-3 text-gray-400">
-                            <li><a href="index.html" class="hover:text-indigo-400 transition-colors duration-300">Home</a></li>
-                            <li><a href="notes.html" class="hover:text-indigo-400 transition-colors duration-300">CSE & Civil Notes</a></li>
-                            <li><a href="physicsblog.html" class="hover:text-indigo-400 transition-colors duration-300">Physics Blog</a></li>
-                            <li><a href="#footer" class="hover:text-indigo-400 transition-colors duration-300">Contact</a></li>
-                        </ul>
-                    </div>
-                    <!-- Column 3: Legal -->
-                    <div>
-                        <h4 class="font-bold text-lg mb-4 playfair-display">Legal</h4>
-                        <ul class="space-y-3 text-gray-400">
-                            <li><a href="privacy.html" class="hover:text-indigo-400 transition-colors duration-300">Privacy Policy</a></li>
-                            <li><a href="new.html" class="hover:text-indigo-400 transition-colors duration-300">Terms of Service</a></li>
-                            <li><a href="aboutus.html" class="hover:text-indigo-400 transition-colors duration-300">About Us</a></li>
-                        </ul>
-                    </div>
-                    <!-- Column 4: Social Media -->
-                    <div>
-                        <h4 class="font-bold text-lg mb-4 playfair-display">Follow Us</h4>
-                        <div class="flex space-x-4">
-                            <!-- Replace # with your actual social media links -->
-                            <a href="https://share.google/FvaATVEoPiEVWMGd3" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-gray-400 hover:bg-indigo-500 hover:text-white transition-all duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/mohdasimsaad?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-gray-400 hover:bg-indigo-500 hover:text-white transition-all duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                            </a>
-                            
-                        </div>
+        <!-- Features Section -->
+        <section class="features" id="features">
+            <h2 class="section-title">What We Offer 🎁</h2>
+            
+            <div class="features-grid">
+                <!-- Feature 1 -->
+                <div class="feature-card">
+                    <div class="icon">📖</div>
+                    <h3>CSE & Civil Notes</h3>
+                    <p>
+                        Comprehensive notes for both Computer Science and Civil Engineering streams. 
+                        Carefully curated content that covers all first-year subjects with clarity and depth.
+                    </p>
+                    <a href="notes.html" class="btn-link">Access Notes →</a>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Physics Deep Dive</h3>
+                    <p>
+                        Master physics concepts with our detailed blog posts, solved problems, and 
+                        real-world applications. Make complex topics simple and enjoyable!
+                    </p>
+                    <a href="physicsblog.html" class="btn-link">Read Physics Blog →</a>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card">
+                    <div class="icon">🔌</div>
+                    <h3>BEE Resources</h3>
+                    <p>
+                        Basic Electrical Engineering made easy! Comprehensive guides, circuit diagrams, 
+                        and practical examples to ace your BEE exams.
+                    </p>
+                    <a href="beeblog.html" class="btn-link">Explore BEE →</a>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card">
+                    <div class="icon">🎥</div>
+                    <h3>Video Lectures</h3>
+                    <p>
+                        Curated collection of the best YouTube lectures from top educators. 
+                        Visual learning at its finest - understand concepts faster!
+                    </p>
+                    <a href="notes.html" class="btn-link">Watch Videos →</a>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card">
+                    <div class="icon">📝</div>
+                    <h3>Previous Year Questions</h3>
+                    <p>
+                        Access years of PYQs with detailed solutions. Practice makes perfect - 
+                        prepare smarter, not harder for your exams!
+                    </p>
+                    <a href="notes.html" class="btn-link">Get PYQs →</a>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card">
+                    <div class="icon">🚀</div>
+                    <h3>Cool Prototypes</h3>
+                    <p>
+                        Explore innovative projects and prototypes. Get inspired and learn 
+                        how to build amazing things with your engineering skills!
+                    </p>
+                    <a href="pro.html" class="btn-link">View Projects →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ASIMSAAD1</h3>
+                    <p style="color: #888; line-height: 1.8;">
+                        Your dedicated resource hub for first-year engineering excellence at Osmania University. 
+                        We're here to make your academic journey smoother and more successful! 🎓
+                    </p>
+                    <div class="social-links">
+                        <a href="https://share.google/FvaATVEoPiEVWMGd3" class="social-link" title="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohdasimsaad" class="social-link" title="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="text-center text-gray-500 mt-16 border-t border-gray-700 pt-8">
-                    <p>&copy; 2024 ASIMSAADZ. All Rights Reserved. Designed with care for students.</p>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                            </svg>
+                            Home
+                        </a></li>
+                        <li><a href="notes.html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                            CSE & Civil Notes
+                        </a></li>
+                        <li><a href="physicsblog.html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path d="M12 1v6m0 6v6"></path>
+                                <path d="M17 7l-5 5"></path>
+                                <path d="M7 7l5 5"></path>
+                                <path d="M7 17l5-5"></path>
+                                <path d="M17 17l-5-5"></path>
+                            </svg>
+                            Physics Blog
+                        </a></li>
+                        <li><a href="beeblog.html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                            </svg>
+                            BEE Blog
+                        </a></li>
+                        <li><a href="pro.html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                            Prototypes
+                        </a></li>
+                    </ul>
                 </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="notes.html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            Study Materials
+                        </a></li>
+                        <li><a href="notes.html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                            </svg>
+                            Video Lectures
+                        </a></li>
+                        <li><a href="notes.html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                            Previous Papers
+                        </a></li>
+                        <li><a href="aboutus.html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                            About Us
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy.html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            Privacy Policy
+                        </a></li>
+                        <li><a href="new.html">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <line x1="12" y1="9" x2="8" y2="9"></line>
+                            </svg>
+                            Terms of Service
+                        </a></li>
+                        <li><a href="#footer">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            Contact Us
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 ASIMSAAD1. Crafted with ❤️ for Engineering Students. All Rights Reserved.</p>
             </div>
         </footer>
 
-        <!-- Fixed Chat Bubble Button -->
-        <a href="#" class="fixed bottom-6 right-6 bg-red-500 text-white rounded-full p-4 shadow-lg hover:bg-red-600 transition duration-300 transform hover:scale-110">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
-        </a>
-
+        <!-- Scroll to Top Button -->
+        <button class="scroll-top" id="scrollTop">↑</button>
     </div>
 
+    <!-- JavaScript -->
     <script>
-        // --- Mobile Menu Functionality ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMenuButton = document.getElementById('close-menu-button');
-        const menuLinks = mobileMenu.querySelectorAll('a');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: ['#667eea', '#764ba2', '#f093fb', '#00f5ff']
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 2,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#667eea',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                },
+                modes: {
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
         });
 
-        closeMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeNav = document.getElementById('closeNav');
+        const mobileLinks = mobileNav.querySelectorAll('a');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.add('active');
         });
 
-        menuLinks.forEach(link => {
+        closeNav.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+        });
+
+        mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
+                mobileNav.classList.remove('active');
             });
         });
 
-        // --- Three.js Animated Background ---
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scrollTop');
 
-        const canvas = document.getElementById('bg-canvas');
-        let scene, camera, renderer, mouseX = 0, mouseY = 0;
-
-        function init() {
-            scene = new THREE.Scene();
-            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-            camera.position.z = 5;
-
-            renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-
-            const geometry = new THREE.DodecahedronGeometry(1.5, 0);
-            const material = new THREE.MeshBasicMaterial({
-                color: 0x4f46e5,
-                wireframe: true,
-                transparent: true,
-                opacity: 0.8
-            });
-
-            const dodecahedron = new THREE.Mesh(geometry, material);
-            scene.add(dodecahedron);
-
-            const ambientLight = new THREE.AmbientLight(0x404040, 2);
-            scene.add(ambientLight);
-
-            window.addEventListener('resize', onWindowResize, false);
-            document.addEventListener('mousemove', onMouseMove, false);
-        }
-
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }
-
-        function onMouseMove(event) {
-            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-
-            camera.position.x = mouseX * 0.5;
-            camera.position.y = mouseY * 0.5;
-
-            scene.children[0].rotation.x += 0.001;
-            scene.children[0].rotation.y += 0.002;
-            scene.children[0].rotation.z += 0.003;
-
-            renderer.render(scene, camera);
-        }
-
-        window.onload = function () {
-            init();
-            animate();
-            
-            // Protect this page - redirect to login if not authenticated
-            protectPage();
-            
-            // Display user info and logout button
-            const user = getCurrentUser();
-            if (user) {
-                // Add user info display
-                const userInfo = document.createElement('div');
-                userInfo.className = 'user-info';
-                userInfo.innerHTML = `
-                    <img src="${user.picture}" alt="${user.name}" class="user-avatar">
-                    <span>${user.name}</span>
-                `;
-                document.body.appendChild(userInfo);
-                
-                // Add logout button
-                const logoutBtn = document.createElement('button');
-                logoutBtn.className = 'logout-btn';
-                logoutBtn.textContent = 'Logout';
-                logoutBtn.onclick = logout;
-                document.body.appendChild(logoutBtn);
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
             }
-        }
-    </script>
-    <script src="auth.js"></script>
+        });
 
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate feature cards on scroll
+        gsap.utils.toArray('.feature-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                y: 50,
+                duration: 0.8,
+                delay: i * 0.1
+            });
+        });
+
+        // Animate stats
+        gsap.utils.toArray('.stat-item').forEach((stat, i) => {
+            gsap.from(stat, {
+                scrollTrigger: {
+                    trigger: stat,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                scale: 0.5,
+                duration: 0.6,
+                delay: i * 0.1
+            });
+        });
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Dynamic gradient on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            document.querySelector('.gradient-overlay').style.background = `
+                radial-gradient(circle at ${x * 100}% ${y * 100}%, rgba(138, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at ${(1-x) * 100}% ${(1-y) * 100}%, rgba(255, 0, 110, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0, 245, 255, 0.1) 0%, transparent 50%)
+            `;
+        });
+    </script>
 </body>
 </html>

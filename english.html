@@ -1,131 +1,709 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971838176892851"
-     crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="icon" type="image/png" href="ASIM.ico">
-
-<link rel="icon" href="ASIM.ico" type="image/x-icon">
-<link rel="shortcut icon" href="ASIM.ico" type="image/x-icon">
-   <link rel="icon" type="image/png" href="ASIM.ico">
-
-<link rel="icon" href="ASIM.ico" type="image/x-icon">
-<link rel="shortcut icon" href="ASIM.ico" type="image/x-icon">
-  <title>ENGLISH</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-800">
-  <div class="container mx-auto max-w-4xl px-4 py-8 sm:py-12">
-    <header class="text-center mb-10">
-      <h1 class="text-4xl sm:text-5xl font-bold text-blue-600">ENGLISH</h1>
-      <p class="mt-3 text-lg text-gray-600">Your central place for notes, problems, and articles.</p>
-    </header>
-
-    <!-- Section: ENGLISH Blog -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-      <div class="p-5 text-xl font-semibold text-gray-800 border-b">ENGLISH Blogs</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="https://islenglishsns.blogspot.com/2025/01/english-theory-units-1-5.html">THEORY - (ASSISTENT PROFESSOR 1)
-          </a></li>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971838176892851"
+        crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="ASIM.ico">
+    <link rel="shortcut icon" href="ASIM.ico" type="image/x-icon">
+    <title>English - ASIMSAAD1</title>
     
-         
-         
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        </ul>
-   </div>
+        :root {
+            --primary-color: #ff10f0;
+            --primary-glow: rgba(255, 16, 240, 0.4);
+            --dark-bg: linear-gradient(135deg, #1a0a1e 0%, #2d1838 50%, #1a0f1f 100%);
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #1a0a1e 0%, #2d1838 50%, #1a0f1f 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            padding: 1rem 1.5rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 16, 240, 0.2);
+            border-radius: 50px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 16, 240, 0.1);
+            border-color: var(--primary-color);
+            transform: translateX(-5px);
+            box-shadow: 0 0 30px var(--primary-glow);
+        }
+
+        .title-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .page-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff10f0 0%, #ff006e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            position: relative;
+            text-shadow: 0 0 80px var(--primary-glow);
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 1rem;
+        }
+
+        .icon-display {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Section Cards */
+        .section-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 16, 240, 0.1);
+            border-radius: 30px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .section-card:hover::before {
+            opacity: 0.05;
+        }
+
+        .section-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 20px 60px var(--primary-glow);
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(255, 16, 240, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-icon {
+            font-size: 2.5rem;
+        }
+
+        .links-container {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .resource-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.2rem 1.5rem;
+            background: rgba(255, 16, 240, 0.05);
+            border: 1px solid rgba(255, 16, 240, 0.15);
+            border-radius: 15px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 16, 240, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .resource-link:hover::before {
+            left: 100%;
+        }
+
+        .resource-link:hover {
+            background: rgba(255, 16, 240, 0.15);
+            border-color: var(--primary-color);
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px var(--primary-glow);
+        }
+
+        .link-icon {
+            font-size: 1.5rem;
+            min-width: 30px;
+        }
+
+        .link-text {
+            flex: 1;
+            font-weight: 500;
+        }
+
+        .link-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .resource-link:hover .link-arrow {
+            transform: translateX(5px);
+        }
+
+        /* Grid Layout for Resources */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Floating Elements */
+        .floating-shape {
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--primary-color) 0%, transparent 70%);
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .shape-1 {
+            width: 400px;
+            height: 400px;
+            top: 10%;
+            right: -100px;
+            animation: floatShape 20s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 300px;
+            height: 300px;
+            bottom: 10%;
+            left: -50px;
+            animation: floatShape 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatShape {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(50px, -50px) rotate(90deg); }
+            50% { transform: translate(0, -100px) rotate(180deg); }
+            75% { transform: translate(-50px, -50px) rotate(270deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .back-btn {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.8rem 1.2rem;
+            }
+
+            .header {
+                margin-bottom: 2rem;
+                padding: 2rem 0;
+            }
+
+            .section-card {
+                padding: 1.5rem;
+            }
+
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a0a1e 0%, #2d1838 50%, #1a0f1f 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 16, 240, 0.1);
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
     </div>
 
-     <!-- Section: ENGLISH PYQs -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-              <div class="p-5 text-xl font-semibold text-gray-800 border-b">ENGLISH PYQ'S</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="https://drive.google.com/drive/folders/1_eV8-U95kuW1S5T6ytwp_qJnKP5ZeA5S">ENGLISH PYQ'S (OU)</a></li>
-             
-        </ul>
-      </div>
+    <div id="particles-js"></div>
+    
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+
+    <a href="notes.html" class="back-btn">← Back to Notes</a>
+
+    <div class="container">
+        <header class="header">
+            <div class="icon-display">
+                <svg width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M45 8L52 15L25 42L18 45L21 38L48 11L45 8Z" fill="url(#penGrad)" stroke="#ff10f0" stroke-width="2.5"/>
+                    <path d="M42 13L51 22" stroke="#ff10f0" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18 45L14 50L10 54" stroke="#ff10f0" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="32" cy="32" r="28" stroke="url(#penCircle)" stroke-width="2" fill="none" opacity="0.3"/>
+                    <defs>
+                        <linearGradient id="penGrad" x1="18" y1="8" x2="52" y2="45">
+                            <stop offset="0%" stop-color="#ff10f0" stop-opacity="0.6"/>
+                            <stop offset="100%" stop-color="#ff006e" stop-opacity="0.3"/>
+                        </linearGradient>
+                        <linearGradient id="penCircle" x1="4" y1="4" x2="60" y2="60">
+                            <stop offset="0%" stop-color="#ff10f0"/>
+                            <stop offset="100%" stop-color="#ff006e"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="title-wrapper">
+                <h1 class="page-title">English</h1>
+            </div>
+            <p class="page-subtitle">Master reading, writing, and speaking skills for academic and professional success</p>
+        </header>
+
+        <!-- Blogs Section -->
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#ff10f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 2V8H20" stroke="#ff10f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="8" y1="13" x2="16" y2="13" stroke="#ff10f0" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="8" y1="17" x2="16" y2="17" stroke="#ff10f0" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                English Blogs
+            </h2>
+            <div class="links-container">
+                <a href="https://islenglishsns.blogspot.com/2025/01/english-theory-units-1-5.html" class="resource-link" target="_blank">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                    <span class="link-text">Theory - Assistant Professor 1</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- PYQs Section -->
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="3" width="16" height="18" rx="2" stroke="#ff10f0" stroke-width="2"/>
+                        <line x1="8" y1="8" x2="16" y2="8" stroke="#ff10f0" stroke-width="1.5"/>
+                        <line x1="8" y1="12" x2="16" y2="12" stroke="#ff10f0" stroke-width="1.5"/>
+                        <line x1="8" y1="16" x2="13" y2="16" stroke="#ff10f0" stroke-width="1.5"/>
+                    </svg>
+                </span>
+                Previous Year Questions
+            </h2>
+            <div class="links-container">
+                <a href="https://drive.google.com/drive/folders/1_eV8-U95kuW1S5T6ytwp_qJnKP5ZeA5S" class="resource-link" target="_blank">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></span>
+                    <span class="link-text">English PYQs (OU)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Exam Pattern Section -->
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="9" stroke="#ff10f0" stroke-width="2"/>
+                        <path d="M12 6V12L16 14" stroke="#ff10f0" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                Exam Pattern Sem-2
+            </h2>
+            <div class="links-container">
+                <a href="English.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13l2 2 4-4"/></svg></span>
+                    <span class="link-text">English Exam Pattern (OU)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Grammar Resources Section -->
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4 19.5C4 18.837 4.26339 18.2011 4.73223 17.7322C5.20107 17.2634 5.83696 17 6.5 17H20" stroke="#ff10f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.5 2H20V22H6.5C5.83696 22 5.20107 21.7366 4.73223 21.2678C4.26339 20.7989 4 20.163 4 19.5V4.5C4 3.83696 4.26339 3.20107 4.73223 2.73223C5.20107 2.26339 5.83696 2 6.5 2Z" stroke="#ff10f0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line x1="12" y1="2" x2="12" y2="22" stroke="#ff10f0" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                Sem-2 All Unit Grammar
+            </h2>
+            <div class="links-container grid-layout">
+                <a href="Unit -1 Grammar  Articles, Prepositions & Determiners .pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></span>
+                    <span class="link-text">Unit 1 - Grammar (Articles, Prepositions & Determiners)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="UNIT -1 VOCABULARY worksheets.docx" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                    <span class="link-text">Unit 1 - Vocabulary Worksheet</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="Unit - 2 GRAMMAR - Tenses.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+                    <span class="link-text">Unit 2 - Grammar (Tenses)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="06 - Unit - 2 VOCABULARY - Homophones, Homonyms, Hographs.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><text x="4" y="18" font-size="14" font-weight="bold" fill="#ff10f0">Aa</text></svg></span>
+                    <span class="link-text">Unit 2 - Vocabulary (Homophones, Homonyms, Homographs)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="Unit - 2 WRITING - Paragraph Writing.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></span>
+                    <span class="link-text">Unit 2 - Writing (Paragraph)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH  Unit - 3 GRAMMAR - Transitions and Connectives.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
+                    <span class="link-text">Unit 3 - Grammar (Transitions and Connectives)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH Unit - 3 VOCABULARY - Synonyms, Antonyms and One Word Substitute.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+                    <span class="link-text">Unit 3 - Vocabulary (Synonyms, Antonyms, One Word)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH  Unit - 3 WRITING - Letter.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span>
+                    <span class="link-text">Unit 3 - Writing (Letter)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH  Unit - 3 WRITING - RESUME.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></span>
+                    <span class="link-text">Unit 3 - Writing (Resume)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH Unit - 3 WRITING - EMAIL WRITING.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="m22 6-10 7L2 6"/></svg></span>
+                    <span class="link-text">Unit 3 - Writing (Email)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH Unit - 4 GRAMMAR - Direct Indirect Speechh.docx" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+                    <span class="link-text">Unit 4 - Grammar (Direct Indirect Speech)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH  Unit - 4 VOCABULARY - Inclusive Language and Euphemism.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M3 11l18-5v12L3 13v-2z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+                    <span class="link-text">Unit 4 - Vocabulary (Inclusive Language & Euphemism)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH - Unit - 4 WRITING - Report Writing.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></span>
+                    <span class="link-text">Unit 4 - Writing (Report)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH  - Unit - 5 GRAMMAR - Active Voice and Passive Voice NEW.docx" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg></span>
+                    <span class="link-text">Unit 5 - Grammar (Active & Passive Voice)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH  - Unit - 5 VOCABULARY - Formal and Informal Vocabulary.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M7 21h10M12 3v18M3 12c0-2.8 2.2-5 5-5h8c2.8 0 5 2.2 5 5M8 12c0 2.2 1.8 4 4 4s4-1.8 4-4"/></svg></span>
+                    <span class="link-text">Unit 5 - Vocabulary (Formal & Informal)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH  - Unit - 5 WRITING - SOP.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M6 2h12v20H6c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2z"/><path d="M10 6h8M10 10h8M10 14h4"/></svg></span>
+                    <span class="link-text">Unit 5 - Writing (SOP)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Personal Resources Section -->
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="starGradEnglish" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff10f0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ff006e;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="url(#starGradEnglish)" stroke="#ff10f0" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                Personal English Resources
+            </h2>
+            <div class="links-container">
+                <a href="ENGLISH ASSINGNMENT 1.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></span>
+                    <span class="link-text">English Model Papers</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="English notes.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></span>
+                    <span class="link-text">Handwritten Notes</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH ASSINGNMENT 1.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></span>
+                    <span class="link-text">Assignment 1</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="ENGLISH 2 –SEM -ASSIGNMENT - 3,4,5 Units JULY 2025 01PD.pdf" class="resource-link">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff10f0" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></span>
+                    <span class="link-text">Assignment 3-4-5 (Units)</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- YouTube Section -->
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="5" width="20" height="14" rx="3" stroke="#ff10f0" stroke-width="2"/>
+                        <path d="M10 9L15 12L10 15V9Z" fill="#ff10f0" stroke="#ff10f0" stroke-width="1.5" stroke-linejoin="round"/>
+                    </svg>
+                </span>
+                YouTube Channels
+            </h2>
+            <div class="links-container">
+                <a href="https://youtu.be/skfwQUtK-EM?si=6zPiMXbkCnkKgDGe" class="resource-link" target="_blank">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="#ff10f0" stroke="#ff10f0" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg></span>
+                    <span class="link-text">English Tips for Exams</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
     </div>
 
+    <script>
+        // Particles.js Configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: ['#ff10f0', '#ff006e', '#8b5cf6'] },
+                shape: { type: 'circle' },
+                opacity: { value: 0.4, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ff10f0',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'grab' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 140, line_linked: { opacity: 0.5 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
 
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
 
-          
-    <!-- Section: ENGLISH PYQs -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-         <div class="p-5 text-xl font-semibold text-gray-800 border-b">ENGLISH SEM-2 EXAM PATTERN</div>
+        // Hide loading screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').classList.add('hidden');
+            }, 800);
+        });
 
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="English.pdf">ENGLISH (OU)</a></li>
-          
-          
-        </ul>
-      </div>
-    </div>
+        // Animate header
+        gsap.from('.icon-display', {
+            duration: 1,
+            y: -50,
+            opacity: 0,
+            ease: 'bounce.out'
+        });
 
-      <!-- Section: ENGLISH PYQs -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-         <div class="p-5 text-xl font-semibold text-gray-800 border-b">ENGLISH SEM-2 ALL UNIT GRAMMAR</div>
+        gsap.from('.page-title', {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            delay: 0.3,
+            ease: 'power3.out'
+        });
 
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="Unit -1 Grammar  Articles, Prepositions & Determiners .pdf">ENGLISH UNIT-1 (GRAMMAR  Articles, Prepositions & Determiners) (OU)</a></li>
-                    <li><a href="UNIT -1 VOCABULARY worksheets.docx">ENGLISH UNIT 1 (VOCABLARY - WORKSHEET) (OU)</a></li>
-                              <li><a href="Unit - 2 GRAMMAR - Tenses.pdf">ENGLISH UNIT-2 (GRAMMAR - TENSES) (OU)</a></li>
-          <li><a href="06 - Unit - 2 VOCABULARY - Homophones, Homonyms, Hographs.pdf">ENGLISH  Unit - 2 VOCABULARY - Homophones, Homonyms, Hographs () (OU)</a></li>
-          <li><a href="Unit - 2 WRITING - Paragraph Writing.pdf">ENGLISH UNIT-2 WRITING PARAGRAPH(OU)</a></li>
-          <li><a href="ENGLISH  Unit - 3 GRAMMAR - Transitions and Connectives.pdf">ENGLISH Unit - 3 GRAMMAR - Transitions and Connectives (OU)</a></li>
-          <li><a href="ENGLISH Unit - 3 VOCABULARY - Synonyms, Antonyms and One Word Substitute.pdf">ENGLISH  Unit - 3 VOCABULARY - Synonyms, Antonyms and One Word Substitute (OU)</a></li>
-          <li><a href="ENGLISH  Unit - 3 WRITING - Letter.pdf">ENGLISH  Unit - 3 WRITING - Letter (OU)</a></li>
-          <li><a href="ENGLISH  Unit - 3 WRITING - RESUME.pdf">ENGLISH  Unit - 3 WRITING - RESUME (OU)</a></li>
-          <li><a href="ENGLISH Unit - 3 WRITING - EMAIL WRITING.pdf">ENGLISH Unit - 3 WRITING - EMAIL WRITING (OU)</a></li>
-          <li><a href="ENGLISH Unit - 4 GRAMMAR - Direct Indirect Speechh.docx">ENGLISH  Unit - 4 GRAMMAR - Direct Indirect Speechh (OU)</a></li>
-          <li><a href="ENGLISH  Unit - 4 VOCABULARY - Inclusive Language and Euphemism.pdf">ENGLISH Unit - 4 VOCABULARY - Inclusive Language and Euphemism.pdf (OU)</a></li>
-          <li><a href="ENGLISH - Unit - 4 WRITING - Report Writing.pdf">ENGLISH  Unit - 4 WRITING - Report Writing (OU)</a></li>
-          <li><a href="ENGLISH  - Unit - 5 GRAMMAR - Active Voice and Passive Voice NEW.docx">ENGLISH Unit - 5 GRAMMAR - Active Voice and Passive Voice (OU)</a></li>
-          <li><a href="ENGLISH  - Unit - 5 VOCABULARY - Formal and Informal Vocabulary.pdf">ENGLISH Unit - 5 VOCABULARY - Formal and Informal Vocabulary (OU)</a></li>
-          <li><a href="ENGLISH  - Unit - 5 WRITING - SOP.pdf">ENGLISH  Unit - 5 WRITING - SOP (OU)</a></li>
+        gsap.from('.page-subtitle', {
+            duration: 1,
+            y: 30,
+            opacity: 0,
+            delay: 0.5,
+            ease: 'power3.out'
+        });
 
+        // Animate section cards
+        gsap.utils.toArray('.section-card').forEach((card, index) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 80%',
+                    toggleActions: 'play none none reverse'
+                },
+                duration: 0.8,
+                y: 50,
+                opacity: 0,
+                rotationX: -15,
+                delay: index * 0.1,
+                ease: 'power3.out'
+            });
+        });
 
-          
-          
-        </ul>
-      </div>
-    </div>
-
-    <!-- Section: ENGLISH PYQs -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-      <div class="p-5 text-xl font-semibold text-gray-800 border-b">MY PERSONAL ENGLISH RESOURCES</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="ENGLISH ASSINGNMENT 1.pdf">ENGLISH MODEL PAPERS</a></li>
-              <li><a href="English notes.pdf">ENGLISH HAND WRITTEN NOTES (OU)</a></li>
-              <li><a href="ENGLISH ASSINGNMENT 1.pdf">ENGLISH ASSIGNMENT 1 (OU)</a></li>
-              <li><a href="ENGLISH 2 –SEM -ASSIGNMENT - 3,4,5 Units JULY 2025 01PD.pdf">ENGLISH ASSIGNMENT 3-4-5 (UNITS) (OU)</a></li>
-             
-              
-        </ul>
-      </div>
-    </div>
-
-    <!-- Section: Unit Wise Notes -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-      <div class="p-5 text-xl font-semibold text-gray-800 border-b">ENGLISH  YOUTUBE CHANNEL'S</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="https://youtu.be/skfwQUtK-EM?si=6zPiMXbkCnkKgDGe">ENGLISH TIPS FOR EXAMS </a></li>
-
-        </ul>
-      </div>
-    </div>
-  </div>
+        // Animate links
+        gsap.utils.toArray('.resource-link').forEach((link, index) => {
+            gsap.from(link, {
+                scrollTrigger: {
+                    trigger: link,
+                    start: 'top 90%',
+                    toggleActions: 'play none none reverse'
+                },
+                duration: 0.6,
+                x: -30,
+                opacity: 0,
+                delay: (index % 16) * 0.04,
+                ease: 'power2.out'
+            });
+        });
+    </script>
 </body>
 </html>

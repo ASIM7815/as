@@ -1,84 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971838176892851"
-     crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="icon" type="image/png" href="ASIM.ico">
-
-<link rel="icon" href="ASIM.ico" type="image/x-icon">
-<link rel="shortcut icon" href="ASIM.ico" type="image/x-icon">
-  <title>BEE(BASIC ELECTRICAL ENGINEERING)</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971838176892851" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="ASIM.ico">
+    <title>Basic Electrical Engineering - ASIMSAAD1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --primary-color: #ffd60a; --primary-glow: rgba(255, 214, 10, 0.4); }
+        body { font-family: 'Space Grotesk', sans-serif; background: linear-gradient(135deg, #1a1508 0%, #2d2408 50%, #1a1008 100%); color: #fff; overflow-x: hidden; min-height: 100vh; }
+        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; }
+        .container { position: relative; z-index: 1; max-width: 1400px; margin: 0 auto; padding: 2rem; }
+        .header { text-align: center; margin-bottom: 4rem; padding: 3rem 0; }
+        .back-btn { position: fixed; top: 2rem; left: 2rem; padding: 1rem 1.5rem; background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 214, 10, 0.2); border-radius: 50px; color: var(--primary-color); text-decoration: none; font-weight: 600; transition: all 0.3s ease; z-index: 100; }
+        .back-btn:hover { background: rgba(255, 214, 10, 0.1); border-color: var(--primary-color); transform: translateX(-5px); box-shadow: 0 0 30px var(--primary-glow); }
+        .page-title { font-family: 'Outfit', sans-serif; font-size: clamp(3rem, 8vw, 5rem); font-weight: 900; background: linear-gradient(135deg, #ffd60a 0%, #ff6b35 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
+        .page-subtitle { font-size: 1.3rem; color: rgba(255, 255, 255, 0.7); margin-top: 1rem; }
+        .icon-display { font-size: 5rem; margin-bottom: 1.5rem; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+        .section-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 214, 10, 0.1); border-radius: 30px; padding: 2.5rem; margin-bottom: 2rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
+        .section-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, var(--primary-color) 0%, transparent 100%); opacity: 0; transition: opacity 0.4s ease; }
+        .section-card:hover::before { opacity: 0.05; }
+        .section-card:hover { transform: translateY(-10px); border-color: var(--primary-color); box-shadow: 0 20px 60px var(--primary-glow); }
+        .section-title { font-family: 'Outfit', sans-serif; font-size: 2rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 2px solid rgba(255, 214, 10, 0.2); display: flex; align-items: center; gap: 1rem; }
+        .section-icon { font-size: 2.5rem; }
+        .links-container { display: grid; gap: 1rem; }
+        .resource-link { display: flex; align-items: center; gap: 1rem; padding: 1.2rem 1.5rem; background: rgba(255, 214, 10, 0.05); border: 1px solid rgba(255, 214, 10, 0.15); border-radius: 15px; color: #fff; text-decoration: none; transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .resource-link::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 214, 10, 0.2), transparent); transition: left 0.5s ease; }
+        .resource-link:hover::before { left: 100%; }
+        .resource-link:hover { background: rgba(255, 214, 10, 0.15); border-color: var(--primary-color); transform: translateX(10px); box-shadow: 0 5px 20px var(--primary-glow); }
+        .link-icon { font-size: 1.5rem; min-width: 30px; }
+        .link-text { flex: 1; font-weight: 500; }
+        .link-arrow { font-size: 1.2rem; transition: transform 0.3s ease; }
+        .resource-link:hover .link-arrow { transform: translateX(5px); }
+        .grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .loading-screen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #1a1508 0%, #2d2408 50%, #1a1008 100%); display: flex; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.5s ease; }
+        .loading-screen.hidden { opacity: 0; pointer-events: none; }
+        .loader { width: 60px; height: 60px; border: 4px solid rgba(255, 214, 10, 0.1); border-top: 4px solid var(--primary-color); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @media (max-width: 768px) { .container { padding: 1rem; } .back-btn { top: 1rem; left: 1rem; padding: 0.8rem 1.2rem; } .section-card { padding: 1.5rem; } .grid-layout { grid-template-columns: 1fr; } }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <div class="container mx-auto max-w-4xl px-4 py-8 sm:py-12">
-    <header class="text-center mb-10">
-      <h1 class="text-4xl sm:text-5xl font-bold text-blue-600">BEE(BASIC ELECTRICAL ENGINEERING)</h1>
-      <p class="mt-3 text-lg text-gray-600">Your central place for notes, problems, and articles.</p>
-    </header>
-
-    <!-- Section: BEE(BASIC ELECTRICAL ENGINEERING) Blog -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-      <div class="p-5 text-xl font-semibold text-gray-800 border-b">BEE(BASIC ELECTRICAL ENGINEERING) Blogs</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="https://basicelectricalengineering123.blogspot.com/">THEORY (ASSISTENT PROFESSOR)
-          </a></li>
-        </ul>
-      </div>
+<body>
+    <div class="loading-screen" id="loadingScreen"><div class="loader"></div></div>
+    <div id="particles-js"></div>
+    <a href="notes.html" class="back-btn">← Back to Notes</a>
+    <div class="container">
+        <header class="header">
+            <div class="icon-display">
+                <svg width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M38 6L20 32H32L26 58L44 32H32L38 6Z" fill="url(#beeMainGrad)" stroke="#ffd60a" stroke-width="3" stroke-linejoin="round"/>
+                    <circle cx="32" cy="32" r="28" stroke="#ffd60a" stroke-width="2.5" stroke-dasharray="4 4" fill="none" opacity="0.4"/>
+                    <defs>
+                        <linearGradient id="beeMainGrad" x1="20" y1="6" x2="44" y2="58">
+                            <stop offset="0%" stop-color="#ffd60a"/>
+                            <stop offset="50%" stop-color="#ff6b35"/>
+                            <stop offset="100%" stop-color="#ffd60a"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <h1 class="page-title">Basic Electrical Engineering</h1>
+            <p class="page-subtitle">Understand circuits, current, voltage, and fundamental electrical systems</p>
+        </header>
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#ffd60a" stroke-width="2"/>
+                        <line x1="8" y1="13" x2="16" y2="13" stroke="#ffd60a" stroke-width="1.5"/>
+                        <line x1="8" y1="17" x2="16" y2="17" stroke="#ffd60a" stroke-width="1.5"/>
+                    </svg>
+                </span>
+                BEE Blogs
+            </h2>
+            <div class="links-container">
+                <a href="https://basicelectricalengineering123.blogspot.com/" class="resource-link" target="_blank">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="link-text">Theory - Assistant Professor</span><span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="4" y="3" width="16" height="18" rx="2" stroke="#ffd60a" stroke-width="2"/>
+                        <line x1="8" y1="8" x2="16" y2="8" stroke="#ffd60a" stroke-width="1.5"/>
+                        <line x1="8" y1="12" x2="16" y2="12" stroke="#ffd60a" stroke-width="1.5"/>
+                    </svg>
+                </span>
+                Previous Year Questions
+            </h2>
+            <div class="links-container">
+                <a href="https://basicelectricalengineering123.blogspot.com/2024/11/previous-year-question-papers.html" class="resource-link" target="_blank">
+                    <span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></span><span class="link-text">BEE PYQs (OU)</span><span class="link-arrow">→</span>
+                </a>
+            </div>
+        </section>
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="url(#beeStarGrad)" stroke="#ffd60a" stroke-width="1.5"/>
+                        <defs>
+                            <linearGradient id="beeStarGrad">
+                                <stop offset="0%" stop-color="#ffd60a" stop-opacity="0.3"/>
+                                <stop offset="100%" stop-color="#ffd60a" stop-opacity="0.1"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
+                Personal BEE Resources
+            </h2>
+            <div class="links-container grid-layout">
+                <a href="BEE FULLL COMPLETE NOTES_compressed.pdf" class="resource-link"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg></span><span class="link-text">Full Complete Notes</span><span class="link-arrow">→</span></a>
+                <a href="BEE External Imp Unit -1.pdf" class="resource-link"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></span><span class="link-text">External Important Unit 1</span><span class="link-arrow">→</span></a>
+                <a href="BEE External Imp Unit -2.pdf" class="resource-link"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></span><span class="link-text">External Important Unit 2</span><span class="link-arrow">→</span></a>
+                <a href="BEE External Imp Unit -3.pdf" class="resource-link"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></span><span class="link-text">External Important Unit 3</span><span class="link-arrow">→</span></a>
+                <a href="BEE External Imp Unit -4.pdf" class="resource-link"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></span><span class="link-text">External Important Unit 4</span><span class="link-arrow">→</span></a>
+                <a href="BEE External Imp Unit -5.pdf" class="resource-link"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"/></svg></span><span class="link-text">External Important Unit 5</span><span class="link-arrow">→</span></a>
+                <a href="bee Model paper 2 key.pdf" class="resource-link"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><circle cx="7" cy="7" r="3"/><path d="M7 10v11M14 8l-2 2 2 2M19 8l-2 2 2 2"/></svg></span><span class="link-text">Model Paper with Answers</span><span class="link-arrow">→</span></a>
+                <a href="DOC-20241231-WA0017..pdf" class="resource-link"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span><span class="link-text">All Units Important Questions</span><span class="link-arrow">→</span></a>
+                <a href="Solved problems.pdf" class="resource-link"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></span><span class="link-text">Solved Problems</span><span class="link-arrow">→</span></a>
+                <a href="unit -1 Solved Problems.pdf" class="resource-link"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><text x="6" y="18" font-size="16" font-weight="bold" fill="#ffd60a">123</text></svg></span><span class="link-text">Unit 1 Solved Problems</span><span class="link-arrow">→</span></a>
+                <a href="Module 2(AC circuits).pdf" class="resource-link"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="#ffd60a" stroke="#ffd60a" stroke-width="2"><path d="M13 2L3 14h8l-1 8 10-12h-8l1-8z"/></svg></span><span class="link-text">AC Circuits Module</span><span class="link-arrow">→</span></a>
+            </div>
+        </section>
+        <section class="section-card">
+            <h2 class="section-title">
+                <span class="section-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22.54 6.42C22.4212 5.94541 22.1793 5.51057 21.8387 5.15941C21.498 4.80824 21.0708 4.55318 20.6 4.42C18.88 4 12 4 12 4C12 4 5.12 4 3.4 4.46C2.92925 4.59318 2.50198 4.84824 2.16135 5.19941C1.82071 5.55057 1.57879 5.98541 1.46 6.46C1.14521 8.20556 0.991228 9.97631 1 11.75C0.988779 13.537 1.14277 15.3213 1.46 17.08C1.59096 17.5398 1.83831 17.9581 2.17695 18.2945C2.51558 18.6308 2.93369 18.8738 3.4 19C5.12 19.46 12 19.46 12 19.46C12 19.46 18.88 19.46 20.6 19C21.0708 18.8668 21.498 18.6118 21.8387 18.2606C22.1793 17.9094 22.4212 17.4746 22.54 17C22.8524 15.3094 23.0065 13.5987 23 11.88C23.0112 10.093 22.8572 8.30869 22.54 6.55V6.42Z" stroke="#ffd60a" stroke-width="1.5"/>
+                        <path d="M9.75 15.02L15.5 11.75L9.75 8.48V15.02Z" fill="#ffd60a"/>
+                    </svg>
+                </span>
+                Lab YouTube Channels
+            </h2>
+            <div class="links-container">
+                <a href="https://youtu.be/BsOeyVBCa3g?si=2utloXF99NJoVs7x" class="resource-link" target="_blank"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffd60a" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span><span class="link-text">BEE Experiments - Theoretical Explanation</span><span class="link-arrow">→</span></a>
+                <a href="https://youtu.be/PJA9FWC0FcY?si=ySk0HzGvmAlZSfoS" class="resource-link" target="_blank"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="#ffd60a" stroke="#ffd60a" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg></span><span class="link-text">BEE Experiments - Practical (Hindi)</span><span class="link-arrow">→</span></a>
+                <a href="https://youtu.be/cQvdAG8kQoQ?si=cMDxNM2Iv3nDnAsX" class="resource-link" target="_blank"><span class="link-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="#ffd60a" stroke="#ffd60a" stroke-width="2"><path d="M5 3l14 9-14 9V3z"/></svg></span><span class="link-text">BEE Experiments - Practical (English)</span><span class="link-arrow">→</span></a>
+            </div>
+        </section>
     </div>
-
-    <!-- Section: BEE(BASIC ELECTRICAL ENGINEERING) PYQs -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-      <div class="p-5 text-xl font-semibold text-gray-800 border-b">BEE(BASIC ELECTRICAL ENGINEERING) PYQs</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="https://basicelectricalengineering123.blogspot.com/2024/11/previous-year-question-papers.html">BEE(BASIC ELECTRICAL ENGINEERING) (OU)</a></li>
-          
-        </ul>
-      </div>
-    </div>
-
-     <!-- Section: BEE(BASIC ELECTRICAL ENGINEERING) PYQs -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-      <div class="p-5 text-xl font-semibold text-gray-800 border-b">MY PERSONAL BEE(BASIC ELECTRICAL ENGINEERING) RESOURSES</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="BEE FULLL COMPLETE NOTES_compressed.pdf">BEE(BASIC ELECTRICAL ENGINEERING) FULL NOTES (OU)</a></li>
-                <li><a href="BEE External Imp Unit -1.pdf">BEE(BASIC ELECTRICAL ENGINEERING) EXTERNAL IMPORTANT UNIT -1  (OU)</a></li>
-                      <li><a href="BEE External Imp Unit -2.pdf">BEE(BASIC ELECTRICAL ENGINEERING) EXTERNAL IMPORTANT UNIT -2 (OU)</a></li>
-                            <li><a href="BEE External Imp Unit -3.pdf">BEE(BASIC ELECTRICAL ENGINEERING) EXTERNAL IMPORTANT UNIT -3 (OU)</a></li>
-                                  <li><a href="BEE External Imp Unit -4.pdf">BEE(BASIC ELECTRICAL ENGINEERING) EXTERNAL IMPORTANT UNIT  -4 (OU)</a></li>
-                                        <li><a href="BEE External Imp Unit -5.pdf">BEE(BASIC ELECTRICAL ENGINEERING)EXTERNAL IMPORTANT UNIT -5 (OU)</a></li>
-                                                <li><a href="bee Model paper 2 key.pdf">BEE(BASIC ELECTRICAL ENGINEERING) MODEL PAPER ANSWERS (OU)</a></li>
-                                                        <li><a href="DOC-20241231-WA0017..pdf">BEE(BASIC ELECTRICAL ENGINEERING) ALL UNITS IMPORTANT QUESTIONS (OU)</a></li>
-                                                                <li><a href="Solved problems.pdf">BEE(BASIC ELECTRICAL ENGINEERING) SOLVED PROBLEMS (OU)</a></li>
-                                                                        <li><a href="unit -1 Solved Problems.pdf">BEE(BASIC ELECTRICAL ENGINEERING) UNIT -1 SOLVED PROBLEMS (OU)</a></li>
-                                                                                <li><a href="Module 2(AC circuits).pdf">BEE(BASIC ELECTRICAL ENGINEERING) UNIT - AC CIRCUITS  (OU)</a></li>
-          
-        </ul>
-      </div>
-    </div>
-
-    <!-- Section: Unit Wise Notes -->
-    <div class="bg-white rounded-lg shadow-md border border-gray-200 mb-6">
-      <div class="p-5 text-xl font-semibold text-gray-800 border-b">BEE(BASIC ELECTRICAL ENGINEERING) LAB YOUTUBE CHANNEL'S</div>
-      <div class="p-5">
-        <ul class="space-y-3 list-disc list-inside text-blue-600">
-          <li><a href="https://youtu.be/BsOeyVBCa3g?si=2utloXF99NJoVs7x"> BEE EXPERIMENTS 1ST AND 2ND SEM (THEOEOTICAL EXPLANATION) </a></li>
-          <li><a href="https://youtu.be/PJA9FWC0FcY?si=ySk0HzGvmAlZSfoS"> BEE EXPERIMENTS 1ST AND 2ND SEM (PRACTICAL EXPLANATION IN HINDI) </a></li>
-          <li><a href="https://youtu.be/cQvdAG8kQoQ?si=cMDxNM2Iv3nDnAsX"> BEE EXPERIMENTS 1ST AND 2ND SEM (PRACTICAL EXPLANATION IN ENGLISH) </a></li>
-       </ul>
-      </div>
-    </div>
-  </div>
+    <script>
+        particlesJS('particles-js', { particles: { number: { value: 60, density: { enable: true, value_area: 800 } }, color: { value: ['#ffd60a', '#ff6b35', '#8b5cf6'] }, shape: { type: 'circle' }, opacity: { value: 0.4, random: true }, size: { value: 3, random: true }, line_linked: { enable: true, distance: 150, color: '#ffd60a', opacity: 0.2, width: 1 }, move: { enable: true, speed: 2, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false } }, interactivity: { detect_on: 'canvas', events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' }, resize: true }, modes: { grab: { distance: 140, line_linked: { opacity: 0.5 } }, push: { particles_nb: 4 } } }, retina_detect: true });
+        gsap.registerPlugin(ScrollTrigger);
+        window.addEventListener('load', () => { setTimeout(() => { document.getElementById('loadingScreen').classList.add('hidden'); }, 800); });
+        gsap.from('.icon-display', { duration: 1, y: -50, opacity: 0, ease: 'bounce.out' });
+        gsap.from('.page-title', { duration: 1, y: 50, opacity: 0, delay: 0.3, ease: 'power3.out' });
+        gsap.from('.page-subtitle', { duration: 1, y: 30, opacity: 0, delay: 0.5, ease: 'power3.out' });
+        gsap.utils.toArray('.section-card').forEach((card, index) => { gsap.from(card, { scrollTrigger: { trigger: card, start: 'top 80%', toggleActions: 'play none none reverse' }, duration: 0.8, y: 50, opacity: 0, rotationX: -15, delay: index * 0.1, ease: 'power3.out' }); });
+        gsap.utils.toArray('.resource-link').forEach((link, index) => { gsap.from(link, { scrollTrigger: { trigger: link, start: 'top 90%', toggleActions: 'play none none reverse' }, duration: 0.6, x: -30, opacity: 0, delay: (index % 11) * 0.05, ease: 'power2.out' }); });
+    </script>
 </body>
 </html>

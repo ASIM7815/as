@@ -3,242 +3,812 @@
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971838176892851"
      crossorigin="anonymous"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971838176892851"
-     crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="icon" type="image/png" href="ASIM.ico">
-
-<link rel="icon" href="ASIM.ico" type="image/x-icon">
-<link rel="shortcut icon" href="ASIM.ico" type="image/x-icon">
-    <title>notes</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="ASIM.ico">
+    <title>Study Notes - ASIMSAAD1 🚀</title>
+    
+    <!-- Modern Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <style>
-        /* Custom CSS for animations and theme */
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --neon-pink: #ff006e;
+            --neon-blue: #00f5ff;
+            --neon-purple: #8b5cf6;
+            --neon-green: #00ff88;
+            --neon-orange: #ff6b35;
+            --neon-yellow: #ffd60a;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
+
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f0f4f8; /* A soft, light blue-gray background */
-            color: #1e293b; /* A dark slate color for text for better readability */
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* Typing animation for the main header */
-        .typing-effect {
-            width: 0;
-            overflow: hidden; /* Ensures the text is not seen until the animation starts */
-            white-space: nowrap; /* Keeps the text on a single line */
-            
-           
+        /* Animated gradient background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(138, 92, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 0, 110, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 10%, rgba(0, 245, 255, 0.1) 0%, transparent 50%);
+            z-index: 0;
+            pointer-events: none;
+            animation: gradientShift 15s ease infinite;
         }
 
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
+        @keyframes gradientShift {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #3b82f6; }
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
         }
 
-        /* Staggered fade-in animation for subject cards */
+        /* Header Styles */
+        header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 3rem 0;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 1000;
+            padding: 0.8rem 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-btn:hover {
+            background: var(--neon-purple);
+            transform: translateX(-5px);
+            box-shadow: 0 10px 30px rgba(138, 92, 246, 0.4);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, #ffffff, var(--neon-blue), var(--neon-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: titleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--neon-pink);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Book Logo Icon */
+        .book-logo {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 1rem;
+            animation: bookFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes bookFloat {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-8px) rotate(2deg); }
+        }
+
+        .book-logo svg {
+            filter: drop-shadow(0 0 20px rgba(0, 245, 255, 0.5));
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
         .subject-card {
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Applying animation delays to each card for a staggered effect */
-        .subject-card:nth-child(1) { animation-delay: 0.2s; }
-        .subject-card:nth-child(2) { animation-delay: 0.4s; }
-        .subject-card:nth-child(3) { animation-delay: 0.6s; }
-        .subject-card:nth-child(4) { animation-delay: 0.8s; }
-        .subject-card:nth-child(5) { animation-delay: 1.0s; } /* Delay for the new card */
-
-        /* Custom styles for the card image containers for a consistent look */
-        .card-image-container {
-            height: 200px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
             overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--card-color) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 0;
+        }
+
+        .subject-card:hover::before {
+            opacity: 0.15;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--card-color);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 40px var(--card-color-glow);
+        }
+
+        .card-image-container {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
         }
 
         .card-image-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures images cover the area without distortion */
-            transition: transform 0.4s ease-in-out;
+            object-fit: cover;
+            transition: transform 0.6s ease;
         }
-        
+
         .subject-card:hover .card-image-container img {
-            transform: scale(1.1); /* Zoom effect on hover */
+            transform: scale(1.15) rotate(2deg);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+        }
+
+        .card-content {
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--card-color);
+        }
+
+        .card-description {
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .card-btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--card-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .card-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .card-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Individual card colors */
+        .card-english { --card-color: #ff10f0; --card-color-glow: rgba(255, 16, 240, 0.3); }
+        .card-constitution { --card-color: #ff006e; --card-color-glow: rgba(255, 0, 110, 0.3); }
+        .card-math { --card-color: #8b5cf6; --card-color-glow: rgba(139, 92, 246, 0.3); }
+        .card-programming { --card-color: #00ff88; --card-color-glow: rgba(0, 255, 136, 0.3); }
+        .card-physics { --card-color: #a855f7; --card-color-glow: rgba(168, 85, 247, 0.3); }
+        .card-chemistry { --card-color: #ff6b35; --card-color-glow: rgba(255, 107, 53, 0.3); }
+        .card-bee { --card-color: #ffd60a; --card-color-glow: rgba(255, 214, 10, 0.3); }
+        .card-mechanics { --card-color: #06ffa5; --card-color-glow: rgba(6, 255, 165, 0.3); }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .back-btn {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .stats {
+                gap: 1.5rem;
+            }
+        }
+
+        /* Loading animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0a0a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--neon-purple);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: fixed;
+            width: 4px;
+            height: 4px;
+            background: var(--neon-blue);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: float-particle 20s linear infinite;
+        }
+
+        @keyframes float-particle {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
         }
     </style>
 </head>
-<body class="antialiased">
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="spinner"></div>
+    </div>
 
-    <!-- Main Container -->
-    <div class="container mx-auto px-4 py-8 md:py-16">
+    <!-- Floating particles -->
+    <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="particle" style="left: 30%; animation-delay: 3s; background: var(--neon-pink);"></div>
+    <div class="particle" style="left: 50%; animation-delay: 6s; background: var(--neon-purple);"></div>
+    <div class="particle" style="left: 70%; animation-delay: 9s; background: var(--neon-green);"></div>
+    <div class="particle" style="left: 90%; animation-delay: 12s; background: var(--neon-yellow);"></div>
 
+    <!-- Back Button -->
+    <a href="index.html" class="back-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+        </svg>
+        Back to Home
+    </a>
+
+    <div class="container">
         <!-- Header Section -->
-        <header class="text-center mb-12 md:mb-16">
-            <h1 id="main-title" class="text-4xl md:text-6xl font-bold text-slate-800 mb-2">
-                <!-- This text will be replaced by the animated title -->
+        <header>
+            <h1>
+                <span class="book-logo">
+                    <svg width="70" height="70" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Main book body -->
+                        <path d="M10 12C10 9.79086 11.7909 8 14 8H50C52.2091 8 54 9.79086 54 12V52C54 54.2091 52.2091 56 50 56H14C11.7909 56 10 54.2091 10 52V12Z" 
+                              fill="url(#bookGradient1)" stroke="url(#bookStroke)" stroke-width="2"/>
+                        
+                        <!-- Book pages effect -->
+                        <path d="M12 14H52V50H12V14Z" fill="url(#bookGradient2)" opacity="0.3"/>
+                        
+                        <!-- Page lines -->
+                        <line x1="18" y1="22" x2="46" y2="22" stroke="#00f5ff" stroke-width="1.5" opacity="0.6"/>
+                        <line x1="18" y1="28" x2="46" y2="28" stroke="#00f5ff" stroke-width="1.5" opacity="0.5"/>
+                        <line x1="18" y1="34" x2="40" y2="34" stroke="#00f5ff" stroke-width="1.5" opacity="0.4"/>
+                        <line x1="18" y1="40" x2="46" y2="40" stroke="#00f5ff" stroke-width="1.5" opacity="0.3"/>
+                        
+                        <!-- Book spine -->
+                        <path d="M10 12V52C10 54.2091 11.7909 56 14 56" stroke="#8b5cf6" stroke-width="3" stroke-linecap="round"/>
+                        
+                        <!-- Bookmark -->
+                        <path d="M42 8V24L38 20L34 24V8" fill="#ff006e" opacity="0.8"/>
+                        
+                        <!-- Gradients -->
+                        <defs>
+                            <linearGradient id="bookGradient1" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#00f5ff"/>
+                                <stop offset="50%" stop-color="#8b5cf6"/>
+                                <stop offset="100%" stop-color="#ff006e"/>
+                            </linearGradient>
+                            <linearGradient id="bookGradient2" x1="12" y1="14" x2="52" y2="50" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+                                <stop offset="100%" stop-color="#00f5ff" stop-opacity="0.2"/>
+                            </linearGradient>
+                            <linearGradient id="bookStroke" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#00f5ff"/>
+                                <stop offset="100%" stop-color="#8b5cf6"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
+                 Notes Hub
             </h1>
-            <p class="text-lg md:text-xl text-slate-500">Your central hub for all study materials.</p>
+            <p class="subtitle">Your Ultimate Collection of Engineering Resources</p>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">Subjects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Resources</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Free</div>
+                </div>
+            </div>
         </header>
 
         <!-- Subjects Grid -->
-        <main class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-
-
-                <!-- Card 1:ENGLISH -->
-            <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+        <div class="cards-grid">
+            <!-- English Card -->
+            <div class="subject-card card-english">
                 <div class="card-image-container">
-                    <img  src="english look.avif" alt="Mathematics illustration"
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Math';">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600&h=400&fit=crop" 
+                         alt="English Literature"
+                         onerror="this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=600&h=400&fit=crop';">
+                    <div class="card-overlay"></div>
                 </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-blue-500 mb-2">ENGLISH</h2>
-                    <p class="text-slate-600 mb-4">SPEAK ENGLISH,WRITE ENGLISH,READ ENGLISH</p>
-                    <a href="english.html" class="inline-block bg-blue-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300">View Notes</a>
-                </div>
-            </div>
-            
-
-              <!-- Card 1: INDIAN CONSTITUTION -->
-            <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                <div class="card-image-container">
-                    <img src="ICOK.webp" alt="Mathematics illustration"
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Math';">
-                </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-blue-500 mb-2">INDIAN-CONSTITUTION</h2>
-                    <p class="text-slate-600 mb-4">ARTICLES,RULES..ETC</p>
-                    <a href="ic.html" class="inline-block bg-blue-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300">View Notes</a>
-                </div>
-            </div>
-            
-
-            <!-- Card 1: Mathematics -->
-            <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=2070&auto=format&fit=crop" alt="Mathematics illustration"
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/3b82f6/ffffff?text=Math';">
-                </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-blue-500 mb-2">MATHEMATICS</h2>
-                    <p class="text-slate-600 mb-4">Explore concepts from algebra, calculus, and geometry.</p>
-                    <a href="maths.html" class="inline-block bg-blue-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-blue-600 transition-colors duration-300">View Notes</a>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 54L18 46L38 26L46 34L26 54H10Z" stroke="#00f5ff" stroke-width="3" fill="url(#englishGrad)" stroke-linejoin="round"/>
+                            <path d="M38 26L46 18L52 24L44 32L38 26Z" stroke="#00f5ff" stroke-width="3" fill="#00f5ff" fill-opacity="0.3"/>
+                            <circle cx="52" cy="18" r="4" fill="#ff006e"/>
+                            <path d="M14 50L10 54L18 46" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="englishGrad" x1="10" y1="26" x2="46" y2="54">
+                                    <stop offset="0%" stop-color="#00f5ff"/>
+                                    <stop offset="100%" stop-color="#8b5cf6"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">English</h2>
+                    <p class="card-description">Master reading, writing, and speaking skills for academic and professional success.</p>
+                    <a href="english.html" class="card-btn">
+                        <span>Explore Notes →</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Card 2: C-Programming (PPS) -->
-            <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <!-- Indian Constitution Card -->
+            <div class="subject-card card-constitution">
                 <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop" alt="C-Programming code on a screen"
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/22c55e/ffffff?text=C-Lang';">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=400&fit=crop" 
+                         alt="Indian Constitution"
+                         onerror="this.src='ICOK.webp';">
+                    <div class="card-overlay"></div>
                 </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-green-500 mb-2">C-PROGRAMMING (PPS)</h2>
-                    <p class="text-slate-600 mb-4">Master the fundamentals of programming and problem-solving.</p>
-                    <a href="cp.html" class="inline-block bg-green-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-green-600 transition-colors duration-300">View Notes</a>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="32" y1="8" x2="32" y2="50" stroke="#ff006e" stroke-width="3" stroke-linecap="round"/>
+                            <rect x="28" y="48" width="8" height="8" rx="1" fill="#ff006e"/>
+                            <path d="M32 16L18 22V26C18 30 22 34 26 36L32 16Z" stroke="#ff006e" stroke-width="2" fill="url(#constGrad1)"/>
+                            <path d="M32 16L46 22V26C46 30 42 34 38 36L32 16Z" stroke="#ff006e" stroke-width="2" fill="url(#constGrad2)"/>
+                            <line x1="10" y1="12" x2="54" y2="12" stroke="#ff006e" stroke-width="3" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="constGrad1" x1="18" y1="16" x2="26" y2="36">
+                                    <stop offset="0%" stop-color="#ff006e"/>
+                                    <stop offset="100%" stop-color="#8b5cf6"/>
+                                </linearGradient>
+                                <linearGradient id="constGrad2" x1="46" y1="16" x2="38" y2="36">
+                                    <stop offset="0%" stop-color="#ff006e"/>
+                                    <stop offset="100%" stop-color="#8b5cf6"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Indian Constitution</h2>
+                    <p class="card-description">Understand fundamental rights, articles, and the framework of Indian democracy.</p>
+                    <a href="ic.html" class="card-btn">
+                        <span>Explore Notes →</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Card 3: Physics -->
-            <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <!-- Mathematics Card -->
+            <div class="subject-card card-math">
                 <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?q=80&w=1974&auto=format&fit=crop" alt="Physics concept illustration"
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/8b5cf6/ffffff?text=Physics';">
+                    <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=600&h=400&fit=crop" 
+                         alt="Mathematics"
+                         onerror="this.src='https://images.unsplash.com/photo-1509228468518-180dd4864904?w=600&h=400&fit=crop';">
+                    <div class="card-overlay"></div>
                 </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-purple-500 mb-2">PHYSICS</h2>
-                    <p class="text-slate-600 mb-4">Uncover the laws of motion, energy, and the universe.</p>
-                    <a href="physics.html" class="inline-block bg-purple-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-purple-600 transition-colors duration-300">View Notes</a>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="8" width="40" height="48" rx="4" stroke="#8b5cf6" stroke-width="3" fill="url(#mathGrad)"/>
+                            <rect x="16" y="12" width="32" height="10" rx="2" fill="#00f5ff" fill-opacity="0.3"/>
+                            <circle cx="22" cy="30" r="3" fill="#8b5cf6"/>
+                            <circle cx="32" cy="30" r="3" fill="#8b5cf6"/>
+                            <circle cx="42" cy="30" r="3" fill="#8b5cf6"/>
+                            <circle cx="22" cy="40" r="3" fill="#8b5cf6"/>
+                            <circle cx="32" cy="40" r="3" fill="#8b5cf6"/>
+                            <circle cx="42" cy="40" r="3" fill="#8b5cf6"/>
+                            <circle cx="22" cy="50" r="3" fill="#8b5cf6"/>
+                            <rect x="30" y="46" width="14" height="8" rx="2" fill="#ff006e"/>
+                            <defs>
+                                <linearGradient id="mathGrad" x1="12" y1="8" x2="52" y2="56">
+                                    <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.2"/>
+                                    <stop offset="100%" stop-color="#00f5ff" stop-opacity="0.1"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Mathematics</h2>
+                    <p class="card-description">Explore algebra, calculus, geometry, and advanced mathematical concepts.</p>
+                    <a href="maths.html" class="card-btn">
+                        <span>Explore Notes →</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Card 4: Chemistry -->
-            <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+            <!-- C Programming Card -->
+            <div class="subject-card card-programming">
                 <div class="card-image-container">
-                    <img src="https://images.unsplash.com/photo-1554475901-4538ddfbccc2?q=80&w=2072&auto=format&fit=crop" alt="Chemistry lab equipment"
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/f97316/ffffff?text=Chemistry';">
+                    <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=600&h=400&fit=crop" 
+                         alt="C Programming"
+                         onerror="this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop';">
+                    <div class="card-overlay"></div>
                 </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-orange-500 mb-2">CHEMISTRY</h2>
-                    <p class="text-slate-600 mb-4">Dive into the world of atoms, molecules, and chemical reactions.</p>
-                    <a href="chemistry.html" class="inline-block bg-orange-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-orange-600 transition-colors duration-300">View Notes</a>
-                </div>
-            </div>
-            
-            <!-- Card 5: BEE (Basic Electrical Engineering) -->
-            <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                <div class="card-image-container">
-                    <img src="BEE.png" alt="Electronic components on a breadboard"
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/f59e0b/ffffff?text=BEE';">
-                </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-amber-500 mb-2">BEE (BASIC ELECTRICAL ENGG)</h2>
-                    <p class="text-slate-600 mb-4">Understand circuits, currents, and electrical systems.</p>
-                    <a href="bee.html" class="inline-block bg-amber-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-amber-600 transition-colors duration-300">View Notes</a>
-                </div>
-            </div>
-             <!-- Card 5: BEE (Basic Electrical Engineering) -->
-            <div class="subject-card bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
-                <div class="card-image-container">
-                    <img src="EM.ipg.jpg" alt="Electronic components on a breadboard"
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x400/f59e0b/ffffff?text=BEE';">
-                </div>
-                <div class="p-6">
-                    <h2 class="text-2xl font-bold text-amber-500 mb-2">ENGINEERING MECHANICS</h2>
-                    <p class="text-slate-600 mb-4">CIVIL MEANS MECHANICS</p>
-                    <a href="em.html" class="inline-block bg-amber-500 text-white font-semibold px-6 py-2 rounded-lg shadow-md hover:bg-amber-600 transition-colors duration-300">View Notes</a>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 20L8 32L18 44" stroke="#00ff88" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M46 20L56 32L46 44" stroke="#00ff88" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            <line x1="38" y1="16" x2="26" y2="48" stroke="#00ff88" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="32" cy="32" r="28" stroke="url(#progGrad)" stroke-width="2" fill="none" opacity="0.3"/>
+                            <defs>
+                                <linearGradient id="progGrad" x1="4" y1="4" x2="60" y2="60">
+                                    <stop offset="0%" stop-color="#00ff88"/>
+                                    <stop offset="100%" stop-color="#00f5ff"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">C Programming (PPS)</h2>
+                    <p class="card-description">Master programming fundamentals, algorithms, and problem-solving techniques.</p>
+                    <a href="cp.html" class="card-btn">
+                        <span>Explore Notes →</span>
+                    </a>
                 </div>
             </div>
 
+            <!-- Physics Card -->
+            <div class="subject-card card-physics">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=600&h=400&fit=crop" 
+                         alt="Physics"
+                         onerror="this.src='https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=600&h=400&fit=crop';">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="4" fill="#a855f7"/>
+                            <ellipse cx="32" cy="32" rx="24" ry="12" stroke="#a855f7" stroke-width="2.5" fill="none" transform="rotate(60 32 32)"/>
+                            <ellipse cx="32" cy="32" rx="24" ry="12" stroke="#a855f7" stroke-width="2.5" fill="none" transform="rotate(-60 32 32)"/>
+                            <ellipse cx="32" cy="32" rx="24" ry="12" stroke="#a855f7" stroke-width="2.5" fill="none"/>
+                            <circle cx="14" cy="32" r="3" fill="#00f5ff"/>
+                            <circle cx="50" cy="32" r="3" fill="#00f5ff"/>
+                            <circle cx="32" cy="18" r="3" fill="#ff006e"/>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Physics</h2>
+                    <p class="card-description">Discover the laws of motion, energy, thermodynamics, and quantum mechanics.</p>
+                    <a href="physics.html" class="card-btn">
+                        <span>Explore Notes →</span>
+                    </a>
+                </div>
+            </div>
 
-        </main>
+            <!-- Chemistry Card -->
+            <div class="subject-card card-chemistry">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1603126857599-f6e157fa2fe6?w=600&h=400&fit=crop" 
+                         alt="Chemistry"
+                         onerror="this.src='https://images.unsplash.com/photo-1554475901-4538ddfbccc2?w=600&h=400&fit=crop';">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 8H40V28L50 48C52 52 50 56 44 56H20C14 56 12 52 14 48L24 28V8Z" stroke="#ff6b35" stroke-width="3" fill="url(#chemGrad)"/>
+                            <line x1="20" y1="8" x2="44" y2="8" stroke="#ff6b35" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="28" cy="42" r="3" fill="#00f5ff" opacity="0.6"/>
+                            <circle cx="38" cy="46" r="2" fill="#00f5ff" opacity="0.6"/>
+                            <circle cx="34" cy="38" r="2.5" fill="#ff006e" opacity="0.5"/>
+                            <path d="M24 32H40" stroke="#ff6b35" stroke-width="2" opacity="0.3"/>
+                            <defs>
+                                <linearGradient id="chemGrad" x1="24" y1="8" x2="40" y2="56">
+                                    <stop offset="0%" stop-color="#ff6b35" stop-opacity="0.1"/>
+                                    <stop offset="100%" stop-color="#ff6b35" stop-opacity="0.3"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Chemistry</h2>
+                    <p class="card-description">Dive into atoms, molecules, reactions, and the fascinating world of chemistry.</p>
+                    <a href="chemistry.html" class="card-btn">
+                        <span>Explore Notes →</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- BEE Card -->
+            <div class="subject-card card-bee">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&h=400&fit=crop" 
+                         alt="Basic Electrical Engineering"
+                         onerror="this.src='BEE.png';">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M36 8L22 32H32L28 56L42 32H32L36 8Z" fill="url(#beeGrad)" stroke="#ffd60a" stroke-width="2" stroke-linejoin="round"/>
+                            <circle cx="32" cy="32" r="26" stroke="#ffd60a" stroke-width="2" stroke-dasharray="4 4" fill="none" opacity="0.3"/>
+                            <defs>
+                                <linearGradient id="beeGrad" x1="22" y1="8" x2="42" y2="56">
+                                    <stop offset="0%" stop-color="#ffd60a"/>
+                                    <stop offset="50%" stop-color="#ff6b35"/>
+                                    <stop offset="100%" stop-color="#ffd60a"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Basic Electrical Engg</h2>
+                    <p class="card-description">Understand circuits, current, voltage, and fundamental electrical systems.</p>
+                    <a href="bee.html" class="card-btn">
+                        <span>Explore Notes →</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Engineering Mechanics Card -->
+            <div class="subject-card card-mechanics">
+                <div class="card-image-container">
+                    <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=600&h=400&fit=crop" 
+                         alt="Engineering Mechanics"
+                         onerror="this.src='EM.ipg.jpg';">
+                    <div class="card-overlay"></div>
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="12" stroke="#06ffa5" stroke-width="3" fill="url(#mechGrad)"/>
+                            <path d="M32 10V18M32 46V54M10 32H18M46 32H54M16 16L22 22M42 42L48 48M48 16L42 22M22 42L16 48" stroke="#06ffa5" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="32" cy="32" r="6" fill="#06ffa5"/>
+                            <rect x="30" y="8" width="4" height="8" rx="2" fill="#06ffa5"/>
+                            <rect x="30" y="48" width="4" height="8" rx="2" fill="#06ffa5"/>
+                            <rect x="8" y="30" width="8" height="4" rx="2" fill="#06ffa5"/>
+                            <rect x="48" y="30" width="8" height="4" rx="2" fill="#06ffa5"/>
+                            <defs>
+                                <radialGradient id="mechGrad">
+                                    <stop offset="0%" stop-color="#06ffa5" stop-opacity="0.3"/>
+                                    <stop offset="100%" stop-color="#06ffa5" stop-opacity="0.1"/>
+                                </radialGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <h2 class="card-title">Engineering Mechanics</h2>
+                    <p class="card-description">Learn statics, dynamics, and the principles of mechanical systems.</p>
+                    <a href="em.html" class="card-btn">
+                        <span>Explore Notes →</span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
-        // JavaScript for the typing animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const titleText = "Welcome to Your Notes";
-            const titleElement = document.getElementById('main-title');
-            
-            // Create a span for the typing effect to live inside the h1
-            const typingSpan = document.createElement('span');
-            typingSpan.className = 'typing-effect';
-            titleElement.appendChild(typingSpan);
-            
-            // Set the text content of the span
-            typingSpan.textContent = titleText;
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hide loader
+        window.addEventListener('load', () => {
+            document.getElementById('loader').classList.add('hidden');
         });
-        
-        // Protect this page - redirect to login if not authenticated
-        document.addEventListener('DOMContentLoaded', () => {
-            protectPage();
-            const user = getCurrentUser();
-            if (user) {
-                const logoutBtn = document.createElement('button');
-                logoutBtn.className = 'logout-btn';
-                logoutBtn.textContent = 'Logout';
-                logoutBtn.onclick = logout;
-                logoutBtn.style.cssText = 'position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px 20px; background: #ff4444; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;';
-                document.body.appendChild(logoutBtn);
-            }
+
+        // Animate cards on scroll
+        gsap.utils.toArray('.subject-card').forEach((card, i) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: 'top 85%',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                y: 80,
+                rotationX: -15,
+                duration: 0.8,
+                delay: i * 0.1,
+                ease: 'power3.out'
+            });
+        });
+
+        // Parallax effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.subject-card');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            cards.forEach((card, i) => {
+                const speed = (i % 3 + 1) * 10;
+                const xOffset = (x - 0.5) * speed;
+                const yOffset = (y - 0.5) * speed;
+                
+                gsap.to(card, {
+                    x: xOffset,
+                    y: yOffset,
+                    duration: 0.5,
+                    ease: 'power2.out'
+                });
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
         });
     </script>
     <script src="auth.js"></script>
-
 </body>
 </html>
