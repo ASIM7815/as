@@ -122,7 +122,7 @@ const subjects = {
         ["CP Assignment 3", "Cp Assignment -3.pdf", "PDF"],
         ["CP Assignment 4", "cp assignment 4.pdf", "PDF"],
         ["CP Assignment 5", "cp assignment 5.pdf", "PDF"],
-        ["Programming Video Guide", "https://youtu.be/JhBs_8DrPYo?si=YB8-HoIzaMDrEDQY", "Video"]
+        ["Programming Video Guide", "https://youtu.be/-4e3ewcTupM?si=R8GdETIs6BduQMst", "Video"]
       ]}
     ]
   },
@@ -152,7 +152,7 @@ const subjects = {
         ["Unit 5: Introduction to Nano Materials", "UNIT-5(INTRODUCTION TO NANO MATERIALS).pdf", "PDF"]
       ]},
       { title: "Video", items: [
-        ["Engineering Physics Video", "https://youtu.be/-4e3ewcTupM?si=R8GdETIs6BduQMst", "Video"]
+        ["Engineering Physics Video", "https://youtu.be/0_h-kLDrGlM?si=Q0GIe3pQUhoR82o7", "Video"]
       ]}
     ]
   },
