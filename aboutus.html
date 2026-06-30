@@ -1,448 +1,109 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5971838176892851"
-     crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
- <link rel="icon" type="image/png" href="ASIM.ico">
-
-<link rel="icon" href="ASIM.ico" type="image/x-icon">
-<link rel="shortcut icon" href="ASIM.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://asimsaadz.com/ASIMSAADZ",
-      "name": "asimsaadz.com",
-      "url": "https://asimsaadz.com/",
-      "logo": "ASIM.png",
-      "sameAs": [
-        "https://www.linkedin.com/in/mohdasimsaad?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        "https://www.instagram.com/mohd.asimsaad?igsh=NG5wb2NhdWF4OG9q"
-        // Add other official social media profiles for asimsaadz.com
-      ],
-      "founder": {
-        "@type": "Person",
-        "@id": "https://asimsaadz.com/ASIMSAADZ",
-        "name": "Mohd Asim Saad",
-        "jobTitle": "Founder and CEO",
-        "url": "https://asimsaadz.com/aboutus.html" // Or your personal profile page on the site
-      }
-    },
-    {
-      "@type": "Person",
-      "@id": "https://asimsaadz.com/ASIMSAADZ",
-      "name": "Mohd Asim Saad",
-      "givenName": "Mohd Asim",
-      "familyName": "Saad",
-      "jobTitle": "Founder and CEO",
-      "worksFor": {
-        "@type": "Organization",
-        "@id": "https://asimsaadz.com/ASIMSAADZ"
-      },
-      "url": "https://asimsaadz.com/aboutus.html", // Link to your bio page
-      "image": "ASIMSAAD.jpg",
-      "sameAs": [
-        "https://www.linkedin.com/in/mohdasimsaad?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        "https://www.instagram.com/mohd.asimsaad?igsh=NG5wb2NhdWF4OG9q"
-        // Add your personal social media profiles and other professional links
-      ],
-      "alumniOf": {
-        "@type": "EducationalOrganization",
-        "name": "COMPUTER SCIENCE ENGINEERING FROM ISL ENGINEERING COLLEGE"
-      }
-      // Add more properties like "birthDate", "nationality", "description" if relevant
-    }
-  ]
-}
-</script>
-    <title>Founder/aboutme</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Custom Styles and Animations -->
-    <style>
-        :root {
-            --bg-color: #0d0c22;
-            --primary-glow: #a855f7; /* purple-500 */
-            --secondary-glow: #6366f1; /* indigo-500 */
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: #e2e8f0; /* slate-200 */
-            font-family: 'Inter', sans-serif;
-        }
-
-        /* --- Custom Glow Effects --- */
-        .text-glow {
-            text-shadow: 0 0 8px var(--primary-glow), 0 0 20px var(--secondary-glow);
-        }
-        .button-glow {
-            box-shadow: 0 0 10px var(--primary-glow), 0 0 20px var(--primary-glow) inset;
-            transition: all 0.3s ease-in-out;
-        }
-        .button-glow:hover {
-            box-shadow: 0 0 20px var(--primary-glow), 0 0 30px var(--primary-glow) inset, 0 0 5px var(--primary-glow);
-            transform: translateY(-2px);
-        }
-        .card-glow {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(145deg, #1e1b3a, #110f22);
-            border: 1px solid #332f54;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-glow:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
-        }
-
-       
-        /* --- Animated Skill Bars --- */
-        .progress-bar-container {
-            background-color: #1e293b; /* slate-800 */
-        }
-        .progress-bar {
-            background: linear-gradient(90deg, var(--secondary-glow), var(--primary-glow));
-            width: 0;
-            transition: width 2s cubic-bezier(0.25, 1, 0.5, 1);
-            box-shadow: 0 0 10px var(--primary-glow);
-        }
-
-        /* --- Scroll-Reveal Animations (Initial State) --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* --- Navbar Styles --- */
-        nav {
-            transition: background-color 0.3s ease-in-out;
-        }
-        .nav-scrolled {
-            background-color: rgba(13, 12, 34, 0.8);
-            backdrop-filter: blur(10px);
-        }
-
-        /* --- Gallery Lightbox --- */
-        #lightbox {
-            z-index: 1000;
-        }
-        #lightbox.active {
-            display: grid;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Mohd Asim Saad, founder of ASIMSAADZ.">
+  <link rel="icon" type="image/png" href="ASIM.ico">
+  <link rel="stylesheet" href="styles.css">
+  <title>Founder - ASIMSAADZ</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mohd Asim Saad",
+    "jobTitle": "Founder of ASIMSAADZ",
+    "url": "https://asimsaadz.com/aboutus.html",
+    "image": "ASIMSAAD.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/mohdasimsaad",
+      "https://www.instagram.com/mohd.asimsaad"
+    ]
+  }
+  </script>
 </head>
-<body class="antialiased">
+<body data-page="about">
+  <div class="site-shell">
+    <header class="site-header" data-header></header>
 
-    <!-- Floating Navbar -->
-    <nav id="navbar" class="fixed w-full top-0 left-0 z-50 px-4 sm:px-8 py-3">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="#home" class="text-xl md:text-2xl font-bold text-white ">ASIM SAAD</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#about" class="hover:text-purple-400 transition-colors duration-300">About</a>
-                <a href="#education" class="hover:text-purple-400 transition-colors duration-300">Skills</a>
-                <a href="#gallery" class="hover:text-purple-400 transition-colors duration-300">Gallery</a>
-                <a href="#contact" class="hover:text-purple-400 transition-colors duration-300">Contact</a>
+    <main>
+      <section class="hero">
+        <div class="container profile-grid">
+          <aside class="hero-card profile-photo reveal">
+            <img src="OK.jpg" alt="Mohd Asim Saad">
+          </aside>
+          <div>
+            <p class="eyebrow">Founder profile</p>
+            <h1>Mohd Asim Saad</h1>
+            <p class="lead">Founder of ASIMSAADZ, a student-focused platform built to make engineering study material easier to access, revise, and share.</p>
+            <div class="hero-actions">
+              <a class="btn sage" href="notes.html">Explore Notes</a>
+              <a class="btn secondary" href="mailto:mohammadasimsaad@gmail.com">Contact</a>
             </div>
-             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
+          </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden mt-4">
-            <a href="#about" class="block py-2 px-4 text-sm hover:bg-gray-700 rounded">About</a>
-            <a href="#education" class="block py-2 px-4 text-sm hover:bg-gray-700 rounded">Skills</a>
-            <a href="#projects" class="block py-2 px-4 text-sm hover:bg-gray-700 rounded">Projects</a>
-            <a href="#gallery" class="block py-2 px-4 text-sm hover:bg-gray-700 rounded">Gallery</a>
-            <a href="#contact" class="block py-2 px-4 text-sm hover:bg-gray-700 rounded">Contact</a>
+      </section>
+
+      <section class="section">
+        <div class="container grid-2">
+          <article class="card reveal">
+            <div class="card-icon">Aim</div>
+            <h2>Why ASIMSAADZ exists</h2>
+            <p>The platform is designed to help students learn actively: take notes, revise unit-wise, solve papers, and explain concepts in their own words until the idea becomes clear.</p>
+          </article>
+          <article class="card reveal">
+            <div class="card-icon">Quote</div>
+            <h2>Study mindset</h2>
+            <p>"If you fail to plan, you are planning to fail." The website keeps resources organized so planning and revision feel lighter.</p>
+          </article>
         </div>
-    </nav>
-    
-    <!-- Canvas for Animated Background -->
-    <canvas id="hero-canvas" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
+      </section>
 
-    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4">
-                <span id="typing-text" class="typing-effect"></span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8 reveal">
-                
-            </p>
-            <a href="" class="button-glow bg-purple-600 text-white font-bold py-3 px-8 rounded-full text-lg reveal" style="transition-delay: 200ms;">
-                WELCOME TO ABOUT SECTION
-            </a>
-        </section>
-
-        <!-- About Me Section -->
-        <section id="about" class="py-20 md:py-32">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white reveal">About Me</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto mt-4 reveal"></div>
+      <section class="section compact">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Education and skills</p>
+              <h2>Building, learning, and sharing.</h2>
+              <p>Focused on computer science engineering, frontend design, web development, and helping students through accessible resources.</p>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="reveal">
-                    <img src="OK.jpg" alt="MOHD ASIM SAAD" class="rounded-lg shadow-2xl w-full h-auto object-cover" 
-                         onerror="this.onerror=null;this.src='https://placehold.co/600x600/0d0c22/ffffff?text=Image+Not+Found';">
-                </div>
-                <div class="space-y-6">
-                    <div class="reveal">
-                        <h3 class="text-2xl font-semibold text-purple-400 mb-2">WHO AM I</h3>
-                        <p class="text-slate-300">""MOHD ASIM SAAD" is the founder and CEO of asimsaadz branded platform where he is the person with good knowledge in website designind,development a passionate entreprenur who want to help the society with dedication and discipline,MOHD ASIM saad FATHER NAME is "ABDUL RAOUF" "</p>
-                    </div>
-                     <div class="reveal" style="transition-delay: 150ms;">
-                        <h3 class="text-2xl font-semibold text-purple-400 mb-2">GOAL OF THESE WEBSITE</h3>
-                        <p class="text-slate-300">My primary goal is to say  Don't just passively absorb information. Take notes, summarize what you've learned in your own words, and try to teach it to someone else. This process of explaining an idea solidifies it in your mind and helps you identify gaps in your understanding.</p>
-                    </div>
-                     <div class="reveal" style="transition-delay: 300ms;">
-                        <h3 class="text-2xl font-semibold text-purple-400 mb-2">"QUOTE"</h3>
-                        <P class="text-slate-300">"IF YOU FAIL TO PLAN
+          </div>
+          <div class="timeline">
+            <article class="timeline-item card reveal">
+              <h3>Computer Science Engineering</h3>
+              <p>Academic journey centered around programming, web development, problem solving, and practical student tools.</p>
+            </article>
+            <article class="timeline-item card reveal">
+              <h3>Frontend and UI design</h3>
+              <p>ASIMSAADZ is built as a frontend website with HTML, CSS, and JavaScript, emphasizing clean layout and smooth navigation.</p>
+            </article>
+            <article class="timeline-item card reveal">
+              <h3>Student support</h3>
+              <p>The goal is simple: make useful material easier to reach so students spend more time studying and less time searching.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-                        </P>
-                        <P class="text-slate-300">YOU ARE PLANING TO FAIL"
-
-                        </P>
-                    </div>
-                </div>
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Gallery</p>
+              <h2>A few visual moments.</h2>
             </div>
-        </section>
-
-        <!-- Education & Skills Section -->
-        <section id="education" class="py-20 md:py-32">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white reveal">Education & Skills</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-indigo-500 mx-auto mt-4 reveal"></div>
-            </div>
-            <div class="grid lg:grid-cols-2 gap-16">
-                <!-- Education -->
-                <div class="space-y-8 reveal">
-                    <h3 class="text-2xl font-semibold text-purple-400 border-b-2 border-purple-800 pb-2">Education</h3>
-                    <div class="card-glow p-6 rounded-lg">
-                        <p class="text-indigo-400 text-sm">2024 - 2028</p>
-                        <h4 class="text-xl font-bold text-white mt-1">B.E IN COMPUTER SCIENCE ENGINEERING</h4>
-                        <p class="text-slate-400 mt-1">OSMANIA AFILLATED COLLEGE HYDERABAD</p>
-                    </div>
-                   
-                
-
-                <!-- Skills -->
-                <div class="space-y-8 reveal" style="transition-delay: 150ms;">
-                    <h3 class="text-2xl font-semibold text-purple-400 border-b-2 border-purple-800 pb-2">Skills</h3>
-                    <div class="space-y-6">
-                        <!-- Skill 1 -->
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-slate-200">COMMUNICATION</span>
-                                <span class="text-sm font-medium text-slate-200">"100%"</span>
-                            </div>
-                            <div class="w-full progress-bar-container rounded-full h-2.5">
-                                <div class="progress-bar h-2.5 rounded-full" data-width="100%"></div>
-                            </div>
-                        </div>
-                        <!-- Skill 2 -->
-                         <div class="skill-item">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-slate-200">WEB DEVELOPMENT</span>
-                                <span class="text-sm font-medium text-slate-200">100%</span>
-                            </div>
-                            <div class="w-full progress-bar-container rounded-full h-2.5">
-                                <div class="progress-bar h-2.5 rounded-full" data-width="100%"></div>
-                            </div>
-                        </div>
-                        <!-- Skill 3 -->
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-slate-200">LEADERSHIP</span>
-                                <span class="text-sm font-medium text-slate-200">100%</span>
-                            </div>
-                            <div class="w-full progress-bar-container rounded-full h-2.5">
-                                <div class="progress-bar h-2.5 rounded-full" data-width="100%"></div>
-                            </div>
-                        </div>
-                         <!-- Skill 4 -->
-                        <div class="skill-item">
-                            <div class="flex justify-between mb-1">
-                                <span class="text-base font-medium text-slate-200">HARD WORKER</span>
-                                <span class="text-sm font-medium text-slate-200">100%</span>
-                            </div>
-                            <div class="w-full progress-bar-container rounded-full h-2.5">
-                                <div class="progress-bar h-2.5 rounded-full" data-width="100%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-       
-        
-        
-
-      
-
+          </div>
+          <div class="gallery-grid">
+            <img class="reveal" src="ASIMSAAD.jpg" alt="ASIMSAADZ founder portrait">
+            <img class="reveal" src="CERTIFICATE.jpg" alt="Certificate">
+            <img class="reveal" src="SUCCESS.jpg" alt="Success visual">
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="text-center py-8 border-t border-gray-800">
-        <p class="text-slate-400">&copy; 2025 MOHD ASIM SAAD | ALL RIGHT RESERVED|</p>
-    </footer>
-
-    <!-- Lightbox for Gallery -->
-    <div id="lightbox" class="fixed top-0 left-0 w-full h-full bg-black/80 place-items-center hidden"
-        onclick="this.classList.remove('active')">
-        <img id="lightbox-img" src="" class="max-w-[90vw] max-h-[80vh] rounded-lg shadow-2xl"
-             onclick="event.stopPropagation()">
-    </div>
-    
-    <!-- three.js for hero background -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        
-        // --- Navbar Scroll Effect ---
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('nav-scrolled');
-            } else {
-                navbar.classList.remove('nav-scrolled');
-            }
-        });
-
-        // --- Mobile Menu Toggle ---
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // --- Typing Effect ---
-        const typingTextElement = document.getElementById('typing-text');
-        const textToType = "MOHD ASIM SAAD"; // Change this to your name
-        let i = 0;
-        function typeWriter() {
-            if (i < textToType.length) {
-                typingTextElement.innerHTML += textToType.charAt(i);
-                i++;
-                setTimeout(typeWriter, 100);
-            }
-        }
-        typeWriter();
-
-        // --- Scroll Reveal Animations ---
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // --- Animated Skills Bars ---
-        const skillItems = document.querySelectorAll('.skill-item');
-        const skillObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progressBar = entry.target.querySelector('.progress-bar');
-                    const width = progressBar.getAttribute('data-width');
-                    progressBar.style.width = width;
-                    observer.unobserve(entry.target); // Animate only once
-                }
-            });
-        }, { threshold: 0.5 });
-        
-        skillItems.forEach(item => skillObserver.observe(item));
-
-        // --- Gallery Lightbox ---
-        const galleryImages = document.querySelectorAll('#gallery img');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-
-        galleryImages.forEach(img => {
-            img.addEventListener('click', () => {
-                lightboxImg.src = img.src;
-                lightbox.classList.add('active');
-            });
-        });
-        
-        // --- Hero Section Animated Background ---
-        let scene, camera, renderer, stars;
-
-        function initHeroBackground() {
-            // Scene
-            scene = new THREE.Scene();
-
-            // Camera
-            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-            camera.position.z = 1;
-            camera.rotation.x = Math.PI / 2;
-
-            // Renderer
-            const canvas = document.getElementById('hero-canvas');
-            renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            renderer.setPixelRatio(window.devicePixelRatio);
-            document.body.appendChild(renderer.domElement);
-            
-            // Stars
-            const starGeo = new THREE.BufferGeometry();
-            const starCount = 6000;
-            const positions = new Float32Array(starCount * 3);
-            for(let i=0; i < starCount * 3; i++) {
-                positions[i] = (Math.random() - 0.5) * 500;
-            }
-            starGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-            
-            let starMaterial = new THREE.PointsMaterial({
-                color: 0xaaaaaa,
-                size: 0.7,
-                transparent: true
-            });
-
-            stars = new THREE.Points(starGeo, starMaterial);
-            scene.add(stars);
-
-            window.addEventListener('resize', onWindowResize, false);
-            
-            animate();
-        }
-
-        function onWindowResize() {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            stars.rotation.z += 0.0002;
-            renderer.render(scene, camera);
-        }
-        
-        initHeroBackground();
-    });
-    </script>
+    <footer class="site-footer" data-footer></footer>
+  </div>
+  <script src="app.js"></script>
 </body>
 </html>
