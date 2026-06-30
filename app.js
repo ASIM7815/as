@@ -69,7 +69,7 @@ const subjects = {
     title: "Mathematics",
     kicker: "Problem solving",
     description: "Question banks, previous papers, assignments, matrices, LMVT, Green theorem, and Taylor theorem material.",
-    image: "smart.jpg",
+    image: "maths-card.png",
     page: "maths.html",
     tags: ["Calculus", "Matrices", "Papers"],
     sections: [
