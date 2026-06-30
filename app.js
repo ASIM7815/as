@@ -152,7 +152,7 @@ const subjects = {
         ["Unit 5: Introduction to Nano Materials", "UNIT-5(INTRODUCTION TO NANO MATERIALS).pdf", "PDF"]
       ]},
       { title: "Video", items: [
-        ["Engineering Physics Video", "https://youtu.be/0_h-kLDrGlM?si=Q0GIe3pQUhoR82o7", "Video"]
+        ["Engineering Physics Video", "https://youtu.be/-4e3ewcTupM?si=R8GdETIs6BduQMst", "Video"]
       ]}
     ]
   },
